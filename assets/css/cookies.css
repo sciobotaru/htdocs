@@ -1,0 +1,27 @@
+.button{
+    background: #ccc;
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    display: inline-block;
+    border: 1px solid #868383;
+    border-bottom: 2px solid #868383;
+}
+
+.cookie-banner{
+    display: none;
+    background: #333;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.cookie-banner .container{
+    margin: 0 auto;
+    width: 70%;
+    color: #bbbaba;
+    padding: 15px;
+}
