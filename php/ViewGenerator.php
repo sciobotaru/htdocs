@@ -135,4 +135,114 @@ function getPaginationFormat($connResult, $requestPage, $paginationPosition)
     </ul>
 <?php
 }
+
+function getProducts()
+{
+    global $requestPage;
+    global $requestCategorie;
+    global $requestPret;
+    global $requestMagazin;
+    global $requestSearch;
+
+    
+    if($requestCategorie == "" && $requestPret == "" && $requestMagazin == "" && $requestSearch == "") //get first page
+    {
+        if($requestPage == "") $requestPage = (int)1;
+
+        $result = getProductsFromDatabase((int)$requestPage, 
+                                            $requestCategorie, 
+                                            $requestMagazin, 
+                                            $requestPret, 
+                                            $requestSearch,
+                                            'all_discounted_products');
+    }else{
+        $result = getProductsFromDatabase((int)$requestPage, 
+                                            $requestCategorie, 
+                                            $requestMagazin, 
+                                            $requestPret, 
+                                            $requestSearch,
+                                            'all_discounted_products');
+    }
+    
+    if($result->num_rows == 0)
+    {
+        ?>
+        <p class="text-center">Ups! Niciun produs care sa corespunda criteriilor cautate. <a href="/"> Reseteaza filtrele.</a></p>
+        <?php
+    }
+    
+    while($row = $result->fetch_assoc()) 
+    {
+        $stars = getStars($row["Rating"]);
+
+        if($row["NumberOfReviews"] == 1)
+        {
+            $reviewFormat = "review";
+            $noOfReviews = "(".$row["NumberOfReviews"].")";
+        }
+        elseif($row["NumberOfReviews"] == "")
+        {
+            $reviewFormat = "";
+            $noOfReviews = "";
+        }
+        elseif($row["NumberOfReviews"] < 20)
+        {
+            $reviewFormat = "review-uri";
+            $noOfReviews = '('.$row["NumberOfReviews"].')';
+        }else
+        {
+            $reviewFormat = "de review-uri";
+            $noOfReviews = '('.$row["NumberOfReviews"].')';
+        }
+?>
+<div class="col-md-3 col-sm-4 col-xs-6 product-item">
+        <div class="product-container">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="<?php echo 'assets/img/'.strtolower($row["Vendor"]).'.jpg'?>" style="height:18px;" href="#" title="<?php echo $row["Vendor"]?>" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="">
+                </div>
+                <div class="col-md-12">
+                    <img class="hot-label" src="<?php echo 'assets/img/hotdeal'.$row["HotLevel"].'.jpg'?>" />
+                    <span class="discount-label"><strong><?php echo $row["Discount"] ?></strong></span>
+                    <div><a href="<?php echo $row["LinkToProduct"]?>" target="_blank" class="product-image"><img src="<?php echo $row["LinkToPictureThumbnail"]?>" onError="this.onerror=null;this.src=\'/assets/img/noimage.jpg\';" data-bs-hover-animate="pulse" style="margin-top:3px;"></a></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="product-rating">
+                    <?php echo $stars?>
+                    <a class="hidden-sm hidden-md hidden-lg small-text"><?php echo $noOfReviews?></a>
+                    <a class="hidden-xs small-text"><?php echo $row["NumberOfReviews"].' '.$reviewFormat?></a>
+                    </div>
+                    <a href="<?php echo $row["LinkToProduct"]?>" target="_blank"><p class="product-description"><?php echo $row["ProductTitle"]?></p></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-md-12" style="color:rgb(17,207,0);">
+                            <p class="discount"><?php echo $row["StockStatus"]?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <s class="product-old-price"><?php echo '('.$row["OldPrice"].')'?></s>
+                            <p class="discount"><?php echo '('.$row["Discount"].')'?></p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p class="product-price"><?php echo $row["NewPrice"].' Lei'?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php    	
+    }
+}
+
 ?>
