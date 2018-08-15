@@ -36,7 +36,7 @@ function clearAndUpdateDBs()
     <link rel="stylesheet" href="assets/css/styles.min.css">
 </head>
 
-<body style="background-color:rgb(251,250,250);">
+<body>
     <div id="LoadingPage" class="loading-icon"><i class="fa fa-spinner fa-spin fa-5x fa-fw"></i></div>
     <div>
         <nav class="navbar navbar-default navigation-clean-search">
@@ -84,9 +84,9 @@ function clearAndUpdateDBs()
     </div>
     </nav>
     </div>
-    <div class="container" style="text-align:center;">
+    <div class="container">
         <div class="row">
-            <div class="col-md-12" style="padding-top:26px;padding-bottom:26px;">
+            <div class="col-md-12">
                 <span>
                     * Logger: 
                         <?php 
@@ -98,9 +98,9 @@ function clearAndUpdateDBs()
                     </div>
         </div>
     </div>
-    <div class="features-clean" style="background-color:#e5e3fe;">
-        <div class="container" style="margin-bottom:-30px;">
-            <div class="row features" style="padding:15px;">
+    <div class="features-clean">
+        <div class="container">
+            <div class="row features">
                 <div class="col-md-4 col-sm-6 item"><i class="fa fa-percent icon"></i>
                     <h3 class="name">Cele mai mari reduceri</h3>
                     <p class="description">Fii la curent cu <strong>cele mai mari reduceri</strong> din magazine la electronice si electrocasnice.</p>

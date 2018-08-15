@@ -44,10 +44,12 @@ connectToDatabase();
 <link rel="stylesheet" href="assets/css/styles.min.css">
 <link rel="stylesheet" href="assets/css/product.css">
 <link rel="stylesheet" href="assets/css/global.css">
-<link rel="stylesheet" href="assets/css/cookies.css">   
+<link rel="stylesheet" href="assets/css/cookies.css">
+<link rel="stylesheet" href="assets/css/banner_prezentare.css">   
+
 </head>
 
-<body style="background-color:rgb(251,250,250);">
+<body>
 
 <!-- NAV BAR start -->
     <nav class="navbar navbar-default navigation-clean-search">
@@ -58,25 +60,24 @@ connectToDatabase();
                 <ul class="nav navbar-nav">
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="pret" href="#">Pret <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li role="presentation"><a id="sub200" style="cursor: pointer;">sub 200 Lei</a></li>
-                            <li role="presentation"><a id="200500" style="cursor: pointer;">200 - 500 Lei</a></li>
-                            <li role="presentation"><a id="5001000" style="cursor: pointer;">500 - 1.000 Lei</a></li>
-                            <li role="presentation"><a id="10002000" style="cursor: pointer;">1.000 - 2.000 Lei</a></li>
-                            <li role="presentation"><a id="peste2000" style="cursor: pointer;">peste 2.000 Lei</a></li>
+                            <li role="presentation"><a class="pointer" id="sub200">sub 200 Lei</a></li>
+                            <li role="presentation"><a class="pointer" id="200500">200 - 500 Lei</a></li>
+                            <li role="presentation"><a class="pointer" id="5001000">500 - 1.000 Lei</a></li>
+                            <li role="presentation"><a class="pointer" id="10002000">1.000 - 2.000 Lei</a></li>
+                            <li role="presentation"><a class="pointer" id="peste2000">peste 2.000 Lei</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="magazin" href="#">Magazin <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li role="presentation"><a id="cel" style="cursor: pointer;">Cel</a></li>
-                            <li role="presentation"><a id="stradait" style="cursor: pointer;">StradaIT</a></li>
-                            <li role="presentation"><a id="flanco" style="cursor: pointer;">Flanco</a></li>
-                            <li role="presentation"><a id="germanos" style="cursor: pointer;">Germanos</a></li>
-                            <li role="presentation"><a id="badabum" style="cursor: pointer;">Badabum</a></li>
-                            <li role="presentation"><a id="evomag" style="cursor: pointer;">EvoMag</a></li>
-                            <li role="presentation"><a id="pcgarage" style="cursor: pointer;">PCgarage</a></li>
-                            <li role="presentation"><a id="itgalaxy" style="cursor: pointer;">ITGalaxy</a></li>
-                            <li role="presentation"><a id="avstore" style="cursor: pointer;">Avstore</a></li>
-                            <li role="presentation"><a id="f64" style="cursor: pointer;">F64</a></li>
+                            <li role="presentation"><a class="pointer" id="cel">Cel</a></li>
+                            <li role="presentation"><a class="pointer" id="stradait">StradaIT</a></li>
+                            <li role="presentation"><a class="pointer" id="flanco">Flanco</a></li>
+                            <li role="presentation"><a class="pointer" id="germanos">Germanos</a></li>
+                            <li role="presentation"><a class="pointer" id="badabum">Badabum</a></li>
+                            <li role="presentation"><a class="pointer" id="evomag">EvoMag</a></li>
+                            <li role="presentation"><a class="pointer" id="pcgarage">PCgarage</a></li>
+                            <li role="presentation"><a class="pointer" id="itgalaxy">ITGalaxy</a></li>
+                            <li role="presentation"><a class="pointer" id="f64">F64</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -93,17 +94,15 @@ connectToDatabase();
 
 <!-- site description -->
 
-<div style="background-color:#dae5e6;">
-<div style="text-align:right;"><span style="float:right;"> <i class="fa fa-close"></i> </span></div>
-<div style="text-align:center;">
-    <h4 style="text-align:center;">Telefoane la promotie de la principalele magazine din Romania</h4>
-</div>
-<div style="text-align:center;"><i class="fa fa-heart"></i><span> Oferte actualizate zilnic.</span></div>
+<div class="banner">
+        <span id="banner-close"> <i class="fa fa-close"></i> </span>
+        <h4 class="message">Telefoane la promotie de la principalele magazine din Romania</h4>
+    <div class="message"><i class="fa fa-heart"></i><span> Oferte actualizate zilnic.</span></div>
 </div>
 
 <!-- site description end -->
     
-<div class="page-header" style="margin-top:5px;">
+<div class="filter">
 <h4><?php echo $hotDealsMessage.getFilteredNumberOfProducts($requestCategorie, $requestMagazin, $requestPret, $requestSearch, 'all_discounted_products')?></h4>
 </div>
 
@@ -114,10 +113,10 @@ connectToDatabase();
     
     <?php $totalPages = getTotalNumberOfPages(); //functia trebuie chemata DUPA getFilteredNumberOfProducts() !!!! - are dependinta ?>
     
-    <ul class="pagination" style="margin:-10px;">
-        <li><a aria-label="Previous" style="cursor: pointer;"><span aria-hidden="true" id="anterioaraup"><<</span></a></li>
+    <ul class="pagination">
+        <li class="pointer"><a aria-label="Previous"><span aria-hidden="true" id="anterioaraup"><<</span></a></li>
         <li><a><span id="currentpageno"><?php echo (int)$requestPage?></span>/<span id="maxpages"><?php echo $totalPages?></span></a></li>
-        <li><a aria-label="Next" style="cursor: pointer;"><span aria-hidden="true" id="urmatoareaup">>></span></a></li>
+        <li class="pointer"><a aria-label="Next"><span aria-hidden="true" id="urmatoareaup">>></span></a></li>
     </ul>
     <div class="row product-list" id="productList">
 
@@ -133,16 +132,16 @@ getProducts();
 /////////////////////////////////////////////////////////////
 ?>
         </div>
-        <ul class="pagination" style="margin:5px;">
-        <li><a aria-label="Previous" style="cursor: pointer;"><span aria-hidden="true" id="anterioaradown"><<</span></a></li>
+        <ul class="pagination">
+        <li class="pointer"><a aria-label="Previous"><span aria-hidden="true" id="anterioaradown"><<</span></a></li>
         <li><a><span id="currentpageno"><?php echo (int)$requestPage?></span>/<span id="maxpages"><?php echo $totalPages?></span></a></li>
-        <li><a aria-label="Next" style="cursor: pointer;"><span aria-hidden="true" id="urmatoareadown">>></span></a></li>
+        <li class="pointer"><a aria-label="Next"><span aria-hidden="true" id="urmatoareadown">>></span></a></li>
     </ul>
 
 </div>
-<div class="features-clean" style="background-color:#e5e3fe;">
-    <div class="container" style="margin-bottom:-30px;">
-        <div class="row features" style="padding:15px;">
+<div class="features-clean">
+    <div class="container">
+        <div class="row features">
             <div class="col-md-4 col-sm-6 item">
                 <i class="fa fa-percent icon"></i>
                 <h3 class="name">Cele mai mari reduceri</h3>

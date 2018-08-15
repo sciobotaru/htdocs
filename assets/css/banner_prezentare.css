@@ -1,0 +1,15 @@
+/*Styling for "Telefoane la promotie de la principalele magazine din Romania"*/
+.banner
+{
+    background-color:#eeeeee;
+    border-radius: 5px;
+}
+.banner #banner-close
+{
+    float:right;
+    padding-right: 5px;
+}
+.banner .message
+{
+    text-align:center;
+}

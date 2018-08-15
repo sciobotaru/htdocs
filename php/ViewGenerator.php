@@ -129,9 +129,9 @@ function getPaginationFormat($connResult, $requestPage, $paginationPosition)
 {
 ?>	
     <ul class="pagination">
-        <li><a aria-label="Previous" style="cursor: pointer;"><span aria-hidden="true" id="anterioara'.$paginationPosition.'"><<</span></a></li>
+        <li class="pointer"><a aria-label="Previous"><span aria-hidden="true" id="anterioara'.$paginationPosition.'"><<</span></a></li>
         <li><a><span id="currentpageno">'.(int)$requestPage.'</span>/<span id="maxpages">100</span></a></li>
-        <li><a aria-label="Next" style="cursor: pointer;"><span aria-hidden="true" id="urmatoarea'.$paginationPosition.'">>></span></a></li>
+        <li class="pointer"><a aria-label="Next"><span aria-hidden="true" id="urmatoarea'.$paginationPosition.'">>></span></a></li>
     </ul>
 <?php
 }

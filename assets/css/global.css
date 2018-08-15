@@ -1,8 +1,19 @@
 body{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: rgb(248, 232, 211);
+    background-color: #77889e;
 }
 
 a{
     color: slategray;
+}
+
+.pointer
+{
+    cursor: pointer ;
+}
+
+.filter
+{
+    padding-top: 10px;
+
 }
