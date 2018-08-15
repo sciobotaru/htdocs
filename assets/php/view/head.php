@@ -5,14 +5,15 @@ function getHead()
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ElectroDeals</title>
-<!-- JS -->
-<!---EVENT HANDLERS START -->
+<!-- BOOTSTRAP -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="assets/js/script.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script async src="assets/js/global.js"></script>
 <script async src="assets/js/cookies.js"></script>
+<script src="assets/js/script.min.js"></script>
+
 <!---SOCIAL  START-->
 <!-- Go to www.addthis.com/dashboard to customize your tools --> 
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a89e7382fbdb8f0"></script>
@@ -28,7 +29,6 @@ function getHead()
 <!-- Start ProfitShare Zone -->
 <script type="text/javascript" src="assets/js/profitshare.js"></script>
 <!-- End ProfitShare Zone -->   
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/journal/bootstrap.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle:400,700">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
