@@ -171,6 +171,7 @@ function getTotalNumberOfPages()
 function getTotalNumberOfProducts($table)
 {
     global $connresult;
+    
     $sql = "SELECT * FROM ".$table;
     $result = $connresult->query($sql);
     $num_rows = $result -> num_rows;

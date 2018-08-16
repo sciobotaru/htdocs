@@ -1,7 +1,12 @@
 <?php
-
 function getNavBar()
 {
+    $allProducts = 0;
+    try {
+        $allProducts = getTotalNumberOfProducts('all_discounted_products');
+    } catch (Exception $e) {}
+        finally {
+
 ?>
 <nav class="navbar navbar-default navigation-clean-search">
     <div class="container">
@@ -33,12 +38,14 @@ function getNavBar()
                 </li>
             </ul>
             <form class="navbar-form navbar-left" target="_self">
-                <div class="form-group"><label class="control-label" for="search-field"><i class="glyphicon glyphicon-search"></i></label><input class="form-control search-field" type="search" name="search" placeholder="Cauta in <?php echo getTotalNumberOfProducts('all_discounted_products')?> produse" autocomplete="on" inputmode="verbatim" id="search-field">
+                <div class="form-group"><label class="control-label" for="search-field"><i class="glyphicon glyphicon-search"></i></label><input class="form-control search-field" type="search" name="search" placeholder="Cauta in <?php echo $allProducts; ?> produse" autocomplete="on" inputmode="verbatim" id="search-field">
                 </div>
             </form>
         </div>
     </div>
 </nav>
 <?php
+        }
+
 }
 ?>
