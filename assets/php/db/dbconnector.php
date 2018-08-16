@@ -20,6 +20,11 @@ function connectToDatabase()
     global $result;
     global $dbname;
     
+    if($debug)
+    {
+        echo '<p style="color:green;">DEBUG: Connecting to DB...</p>';
+    }
+
     $connresult=new mysqli($server, $username, $password, $dbname);
     
     if($debug)

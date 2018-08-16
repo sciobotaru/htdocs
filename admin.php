@@ -1,5 +1,5 @@
 <?php
-include 'php/DbConnector.php';
+include 'assets/php/db/dbconnector.php';
 include 'php/XmlHandler.php';
 
 $tableAllProducts = 'all_discounted_products';
