@@ -8,7 +8,7 @@ $numberOfRowsFiltered;
 
 $paginationMaxNumber;
 
-
+//public
 function connectToDatabase()
 {
     global $debug;
@@ -178,7 +178,7 @@ function getTotalNumberOfProducts($table)
     return $num_rows;
 }
 
-
+//private
 function getWhereFilter($category, $magazin, $pret, $search, $table)
 {
     $productTitleFilter = "";

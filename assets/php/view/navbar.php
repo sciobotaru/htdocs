@@ -46,6 +46,5 @@ function getNavBar()
 </nav>
 <?php
         }
-
 }
 ?>

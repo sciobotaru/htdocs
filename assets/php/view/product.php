@@ -1,4 +1,5 @@
 <?php
+//public
 function getProducts()
 {
     global $requestPage;
@@ -108,6 +109,7 @@ function getProducts()
     }
 }
 
+//private
 function getStars($rating)
 {
     if($rating == 0)
