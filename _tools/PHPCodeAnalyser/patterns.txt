@@ -1,0 +1,10 @@
+Functions:
+DefinedFunctions: function\s+(\w+)
+CalledFunctions: (\w+)\(.*\) (line does not contain "function")
+
+Files:
+DependsOnFiles: (\w+)\.php (if line contains "include")
+
+Variables:
+GlobalDefinedVariables: \$(\w+) (while !line.Contains("function"))
+UsedVariables: global\s+\$(\w+) (remove duplicates)

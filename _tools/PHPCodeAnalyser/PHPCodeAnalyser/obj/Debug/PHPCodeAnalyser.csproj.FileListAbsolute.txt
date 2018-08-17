@@ -1,0 +1,15 @@
+D:\Projects\PHPCodeAnalyser\PHPCodeAnalyser\bin\Debug\PHPCodeAnalyser.exe.config
+D:\Projects\PHPCodeAnalyser\PHPCodeAnalyser\bin\Debug\PHPCodeAnalyser.exe
+D:\Projects\PHPCodeAnalyser\PHPCodeAnalyser\bin\Debug\PHPCodeAnalyser.pdb
+D:\Projects\PHPCodeAnalyser\PHPCodeAnalyser\obj\Debug\PHPCodeAnalyser.csprojResolveAssemblyReference.cache
+D:\Projects\PHPCodeAnalyser\PHPCodeAnalyser\obj\Debug\PHPCodeAnalyser.Form1.resources
+D:\Projects\PHPCodeAnalyser\PHPCodeAnalyser\obj\Debug\PHPCodeAnalyser.Properties.Resources.resources
+D:\Projects\PHPCodeAnalyser\PHPCodeAnalyser\obj\Debug\PHPCodeAnalyser.csproj.GenerateResource.cache
+D:\Projects\PHPCodeAnalyser\PHPCodeAnalyser\obj\Debug\PHPCodeAnalyser.csproj.CoreCompileInputs.cache
+D:\Projects\PHPCodeAnalyser\PHPCodeAnalyser\obj\Debug\PHPCodeAnalyser.exe
+D:\Projects\PHPCodeAnalyser\PHPCodeAnalyser\obj\Debug\PHPCodeAnalyser.pdb
+D:\Projects\PHPCodeAnalyser\PHPCodeAnalyser\bin\Debug\MoreLinq.dll
+D:\Projects\PHPCodeAnalyser\PHPCodeAnalyser\bin\Debug\System.ValueTuple.dll
+D:\Projects\PHPCodeAnalyser\PHPCodeAnalyser\bin\Debug\MoreLinq.xml
+D:\Projects\PHPCodeAnalyser\PHPCodeAnalyser\bin\Debug\System.ValueTuple.xml
+D:\Projects\PHPCodeAnalyser\PHPCodeAnalyser\obj\Debug\PHPCodeAnalyser.csproj.CopyComplete
