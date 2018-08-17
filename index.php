@@ -1,7 +1,7 @@
 <?php
 include 'assets/php/includes.php'; //includes for normal site functioning
 
-checkCookies(); //cookies.php
+checkCookies();
 connectToDatabase();
 ?>
 

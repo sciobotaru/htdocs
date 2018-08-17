@@ -1,6 +1,6 @@
 <?php
 include 'assets/php/db/dbconnector.php';
-include 'php/ViewGenerator.php'; //for getProduct()
+include 'assets/php/view/product.php'; //for getProduct()
 include 'assets/php/cookies.php'; //for checkCookies()
 include 'ParseURL.php';
 include 'InputChecker';

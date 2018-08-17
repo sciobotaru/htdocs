@@ -1,6 +1,6 @@
 <?php
 include 'assets/php/includes.php';
-include 'php/XmlHandler.php';
+include 'assets/php/xml.php';
 
 $tableAllProducts = 'all_discounted_products';
 
