@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.bBrowseProject = new System.Windows.Forms.Button();
             this.bRunAnalysis = new System.Windows.Forms.Button();
             this.lFolderSelected = new System.Windows.Forms.Label();
@@ -36,9 +37,10 @@
             // 
             // bBrowseProject
             // 
-            this.bBrowseProject.Location = new System.Drawing.Point(12, 12);
+            this.bBrowseProject.Location = new System.Drawing.Point(9, 10);
+            this.bBrowseProject.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bBrowseProject.Name = "bBrowseProject";
-            this.bBrowseProject.Size = new System.Drawing.Size(157, 29);
+            this.bBrowseProject.Size = new System.Drawing.Size(118, 24);
             this.bBrowseProject.TabIndex = 0;
             this.bBrowseProject.Text = "Browse Project";
             this.bBrowseProject.UseVisualStyleBackColor = true;
@@ -46,9 +48,10 @@
             // 
             // bRunAnalysis
             // 
-            this.bRunAnalysis.Location = new System.Drawing.Point(12, 68);
+            this.bRunAnalysis.Location = new System.Drawing.Point(9, 55);
+            this.bRunAnalysis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bRunAnalysis.Name = "bRunAnalysis";
-            this.bRunAnalysis.Size = new System.Drawing.Size(220, 46);
+            this.bRunAnalysis.Size = new System.Drawing.Size(165, 37);
             this.bRunAnalysis.TabIndex = 1;
             this.bRunAnalysis.Text = "Run Analysis";
             this.bRunAnalysis.UseVisualStyleBackColor = true;
@@ -57,9 +60,10 @@
             // lFolderSelected
             // 
             this.lFolderSelected.AutoSize = true;
-            this.lFolderSelected.Location = new System.Drawing.Point(185, 19);
+            this.lFolderSelected.Location = new System.Drawing.Point(139, 15);
+            this.lFolderSelected.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lFolderSelected.Name = "lFolderSelected";
-            this.lFolderSelected.Size = new System.Drawing.Size(363, 17);
+            this.lFolderSelected.Size = new System.Drawing.Size(281, 13);
             this.lFolderSelected.TabIndex = 2;
             this.lFolderSelected.Text = "No folder selected (ex.: C:\\Apache24\\htdocs\\assets\\php)";
             // 
@@ -68,23 +72,26 @@
             this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(12, 139);
+            this.richTextBox1.Location = new System.Drawing.Point(9, 113);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1162, 510);
+            this.richTextBox1.Size = new System.Drawing.Size(872, 415);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1186, 661);
+            this.ClientSize = new System.Drawing.Size(890, 537);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lFolderSelected);
             this.Controls.Add(this.bRunAnalysis);
             this.Controls.Add(this.bBrowseProject);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "PHP Code Analyzer";
             this.ResumeLayout(false);
             this.PerformLayout();
 

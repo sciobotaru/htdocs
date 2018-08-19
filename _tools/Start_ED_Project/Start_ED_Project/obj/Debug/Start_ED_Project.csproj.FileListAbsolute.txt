@@ -1,0 +1,7 @@
+D:\GoogleDrive\PROJECTS\ED\_START\Start_ED_Project\Start_ED_Project\bin\Debug\Start_ED_Project.exe.config
+D:\GoogleDrive\PROJECTS\ED\_START\Start_ED_Project\Start_ED_Project\bin\Debug\Start_ED_Project.exe
+D:\GoogleDrive\PROJECTS\ED\_START\Start_ED_Project\Start_ED_Project\bin\Debug\Start_ED_Project.pdb
+D:\GoogleDrive\PROJECTS\ED\_START\Start_ED_Project\Start_ED_Project\obj\Debug\Start_ED_Project.csprojResolveAssemblyReference.cache
+D:\GoogleDrive\PROJECTS\ED\_START\Start_ED_Project\Start_ED_Project\obj\Debug\Start_ED_Project.csproj.CoreCompileInputs.cache
+D:\GoogleDrive\PROJECTS\ED\_START\Start_ED_Project\Start_ED_Project\obj\Debug\Start_ED_Project.exe
+D:\GoogleDrive\PROJECTS\ED\_START\Start_ED_Project\Start_ED_Project\obj\Debug\Start_ED_Project.pdb

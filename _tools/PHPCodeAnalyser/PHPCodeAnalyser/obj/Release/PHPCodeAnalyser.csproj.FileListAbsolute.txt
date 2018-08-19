@@ -1,0 +1,14 @@
+C:\Apache24\htdocs\_tools\PHPCodeAnalyser\PHPCodeAnalyser\bin\Release\PHPCodeAnalyser.exe.config
+C:\Apache24\htdocs\_tools\PHPCodeAnalyser\PHPCodeAnalyser\bin\Release\PHPCodeAnalyser.exe
+C:\Apache24\htdocs\_tools\PHPCodeAnalyser\PHPCodeAnalyser\bin\Release\PHPCodeAnalyser.pdb
+C:\Apache24\htdocs\_tools\PHPCodeAnalyser\PHPCodeAnalyser\bin\Release\MoreLinq.dll
+C:\Apache24\htdocs\_tools\PHPCodeAnalyser\PHPCodeAnalyser\bin\Release\System.ValueTuple.dll
+C:\Apache24\htdocs\_tools\PHPCodeAnalyser\PHPCodeAnalyser\bin\Release\MoreLinq.xml
+C:\Apache24\htdocs\_tools\PHPCodeAnalyser\PHPCodeAnalyser\bin\Release\System.ValueTuple.xml
+C:\Apache24\htdocs\_tools\PHPCodeAnalyser\PHPCodeAnalyser\obj\Release\PHPCodeAnalyser.Form1.resources
+C:\Apache24\htdocs\_tools\PHPCodeAnalyser\PHPCodeAnalyser\obj\Release\PHPCodeAnalyser.Properties.Resources.resources
+C:\Apache24\htdocs\_tools\PHPCodeAnalyser\PHPCodeAnalyser\obj\Release\PHPCodeAnalyser.csproj.GenerateResource.cache
+C:\Apache24\htdocs\_tools\PHPCodeAnalyser\PHPCodeAnalyser\obj\Release\PHPCodeAnalyser.csproj.CoreCompileInputs.cache
+C:\Apache24\htdocs\_tools\PHPCodeAnalyser\PHPCodeAnalyser\obj\Release\PHPCodeAnalyser.csproj.CopyComplete
+C:\Apache24\htdocs\_tools\PHPCodeAnalyser\PHPCodeAnalyser\obj\Release\PHPCodeAnalyser.exe
+C:\Apache24\htdocs\_tools\PHPCodeAnalyser\PHPCodeAnalyser\obj\Release\PHPCodeAnalyser.pdb
