@@ -19,7 +19,7 @@ namespace DB_Migrator
         private bool production;
 
         //Constructor
-        public void DBConnect()
+        public DBContext()
         {
             Initialize();
             production = false;
@@ -42,26 +42,26 @@ namespace DB_Migrator
             }
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";SslMode=none";
 
             connection = new MySqlConnection(connectionString);
         }
 
         //open connection to database
-        private bool OpenConnection()
+        public bool OpenConnection()
         {
             connection.Open();
-            if (connection.State == System.Data.ConnectionState.Open)
+            if (connection.State == ConnectionState.Open)
                 return true;
             else
                 return false;
         }
 
         //Close connection
-        private bool CloseConnection()
+        public bool CloseConnection()
         {
             connection.Close();
-            if (connection.State == System.Data.ConnectionState.Closed)
+            if (connection.State == ConnectionState.Closed)
                 return true;
             else
                 return false;
@@ -99,8 +99,17 @@ namespace DB_Migrator
 
         //Delete statement
         //delete: "ALTER TABLE `all_valid_products` DROP `LinkYoutube`;"
-        public void Delete()
+        public int Remove(string table, string column)
         {
+            string addString = "ALTER TABLE `" + table + "` DROP `" + column + "`;";
+            using (MySqlCommand command = new MySqlCommand(addString, connection))
+            {
+                try
+                {
+                    return command.ExecuteNonQuery();
+                }
+                catch { return 0; }
+            }
         }
 
         //Select statement

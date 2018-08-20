@@ -19,11 +19,41 @@ using System.Windows.Forms;
 
 namespace DB_Migrator
 {
-    public partial class Form1 : Form
+    public partial class DBMigrator : Form
     {
-        public Form1()
+        private DBContext db;
+        private Xml xml;
+        private XmlToDbMapper xmlToDb;
+
+        public DBMigrator()
         {
             InitializeComponent();
+            db = new DBContext();
+            xml = new Xml();
+            xmlToDb = new XmlToDbMapper();
+        }
+
+        private void bReadFiles_Click(object sender, EventArgs e)
+        {
+            db.OpenConnection();
+            List<string> columns = db.GetColumns("all_discounted_products");
+            foreach(var col in columns)
+            {
+                rtbColumnsOld.Text += col + "\n";
+            }
+            db.CloseConnection();
+
+            rtbXml.Text = xml.GetEditableArea();
+            rtbXmlToDB.Text = xmlToDb.GetEditableArea();
+        }
+
+        private void bUpdate_Click(object sender, EventArgs e)
+        {
+            db.OpenConnection();
+            //db.Add("all_discounted_products", "xxx", true, 100, false);
+            int noColumns = db.Remove("all_discounted_products", "xxx");
+            lLoggerDB.Text = noColumns + " lines affected.";
+            db.CloseConnection();
         }
     }
 }
