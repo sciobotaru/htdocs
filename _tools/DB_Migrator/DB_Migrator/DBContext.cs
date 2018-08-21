@@ -69,8 +69,9 @@ namespace DB_Migrator
 
         //Insert statement
         //insert int: ALTER TABLE `all_valid_products` ADD `InsertInt` INT(8) UNSIGNED NULL DEFAULT NULL ;
+        //ALTER TABLE `all_discounted_products` ADD `Booll` BOOLEAN NULL DEFAULT NULL AFTER `LinkYoutube`;
         //returns number of rows affected
-        public int Add(string table, string column, bool isString, int stringLenght, bool isInt)
+        public int Add(string table, string column, bool isString, int stringLenght, bool isInt, bool isBool)
         {
             if (isInt)
             {
@@ -80,9 +81,17 @@ namespace DB_Migrator
                     return command.ExecuteNonQuery();
                 }
             }
-            else
+            else if (isString)
             {
                 string addString = "ALTER TABLE `" + table + "` ADD `" + column + "` VARCHAR(" + stringLenght + ") NULL DEFAULT NULL ;";
+                using (MySqlCommand command = new MySqlCommand(addString, connection))
+                {
+                    return command.ExecuteNonQuery();
+                }
+            }
+            else
+            {
+                string addString = "ALTER TABLE `" + table + "` ADD `" + column + "` BOOLEAN NULL DEFAULT NULL;";
                 using (MySqlCommand command = new MySqlCommand(addString, connection))
                 {
                     return command.ExecuteNonQuery();
@@ -91,10 +100,18 @@ namespace DB_Migrator
         }
 
         //Update statement
-        //modify: ALTER TABLE `all_valid_products` CHANGE `LinkYoutube` `LinkYoutubee` VARCHAR(300) CHARACTER SET latin1 COLLATE latin1_general_ci NULL DEFAULT NULL;
-        public void Update()
+        //modify: ALTER TABLE `all_valid_products` CHANGE `LinkYoutube` `LinkYoutubee`;
+        public int Update(string table, string oldName, string newName)
         {
-
+            string addString = "ALTER TABLE `" + table + "` CHANGE `" + oldName + "` `" + newName + "` VARCHAR(300) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;";
+            using (MySqlCommand command = new MySqlCommand(addString, connection))
+            {
+                try
+                {
+                    return command.ExecuteNonQuery();
+                }
+                catch { return 0; }
+            }
         }
 
         //Delete statement

@@ -83,10 +83,8 @@ $(function(){
             location.href = "index.php?" + $.param(filterObj);
         }
     });
-                
-            
         
-        //------- CATEGORII START ----
+    //------- CATEGORII START ----
         
     $("#AparateFoto").click(function(){
         var cat = $("#AparateFoto").text();

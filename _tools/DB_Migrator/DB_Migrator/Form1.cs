@@ -32,10 +32,13 @@ namespace DB_Migrator
             db = new DBContext();
             xml = new Xml();
             xmlToDb = new XmlToDbMapper();
+            bUpdate.Enabled = false;
         }
 
         private void bReadFiles_Click(object sender, EventArgs e)
         {
+            bUpdate.Enabled = true;
+            lLoggerDB.Text = "Logger";
             db.OpenConnection();
             rtbColumnsOld.Text = string.Empty;
             initialDbColumns = db.GetColumns("all_discounted_products");
@@ -51,6 +54,7 @@ namespace DB_Migrator
 
         private void bUpdate_Click(object sender, EventArgs e)
         {
+            #region database (phpmysql)
             if (initialDbColumns == null) MessageBox.Show("Error: please read files first");
             lLoggerDB.Text = string.Empty;
             //1. Get modified (or not) columns 
@@ -94,27 +98,66 @@ namespace DB_Migrator
             {
                 MessageBox.Show("Error: there are too many changes into DB. Please make only ONE change and update.");
             }
-            //display the values
-            if (oldValue != string.Empty && newValue != string.Empty)
+            //modify the database
+            if (oldValue != string.Empty && newValue != string.Empty) // => update (change column name)
             {
                 lLoggerDB.Text += "Modified: Old -> " + oldValue + "; New -> " + newValue + "; ";
-
+                db.OpenConnection();
+                int lines = db.Update("all_discounted_products", oldValue, newValue);
+                MessageBox.Show("Go to myphpadmin and adjust the type of the column (currently is char(300))");
+                db.CloseConnection();
             }
             else
-            if (realAdded != string.Empty)
+            if (realAdded != string.Empty) // => add column
             {
                 lLoggerDB.Text = "Added: " + realAdded + "; ";
+                db.OpenConnection();
+                if (cbAddStr.Checked == true)
+                {
+                    db.Add("all_discounted_products", realAdded, true, 200, false, false);
+                    lLoggerDB.Text += "The column is of type string.";
+                }
+                else
+                    if(cbAddInt.Checked == true)
+                {
+                    db.Add("all_discounted_products", realAdded, false, 0, true, false);
+                    lLoggerDB.Text += "The column is of type string.";
+                }
+                else
+                    if(cbAddBool.Checked == true)
+                {
+                    db.Add("all_discounted_products", realAdded, false, 200, false, true);
+                    lLoggerDB.Text += "The column is of type string.";
+                }
+                db.CloseConnection();
             }
             else
             if (realDeleted != string.Empty)
             {
                 lLoggerDB.Text += "Deleted: " + realDeleted + "; ";
+                db.OpenConnection();
+                db.Remove("all_discounted_products", realDeleted);
+                db.CloseConnection();
             }
-            //db.OpenConnection();
-            ////db.Add("all_discounted_products", "xxx", true, 100, false);
-            //int noColumns = db.Remove("all_discounted_products", "xxx");
-            //lLoggerDB.Text = noColumns + " lines affected.";
-            //db.CloseConnection();
+            #endregion
+
+            #region xml (Product.cs)
+            string result = string.Empty;
+            result += xml.GetBeforeEditableArea();
+            result += rtbXml.Text;
+            result += xml.GetAfterEditableArea();
+            xml.Save(result);
+            #endregion
+
+            #region xmlToDB (dbconnector.php)
+            string text = string.Empty;
+            text += xmlToDb.GetBeforeEditableArea();
+            text += rtbXmlToDB.Text;
+            text += xmlToDb.GetAfterEditableArea();
+            xmlToDb.Save(text);
+            #endregion
+
+            bUpdate.Enabled = false;
         }
     }
 }
