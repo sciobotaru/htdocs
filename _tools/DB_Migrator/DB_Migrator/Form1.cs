@@ -24,6 +24,7 @@ namespace DB_Migrator
         private DBContext db;
         private Xml xml;
         private XmlToDbMapper xmlToDb;
+        List<string> initialDbColumns;
 
         public DBMigrator()
         {
@@ -36,8 +37,9 @@ namespace DB_Migrator
         private void bReadFiles_Click(object sender, EventArgs e)
         {
             db.OpenConnection();
-            List<string> columns = db.GetColumns("all_discounted_products");
-            foreach(var col in columns)
+            rtbColumnsOld.Text = string.Empty;
+            initialDbColumns = db.GetColumns("all_discounted_products");
+            foreach (var col in initialDbColumns)
             {
                 rtbColumnsOld.Text += col + "\n";
             }
@@ -49,11 +51,70 @@ namespace DB_Migrator
 
         private void bUpdate_Click(object sender, EventArgs e)
         {
-            db.OpenConnection();
-            //db.Add("all_discounted_products", "xxx", true, 100, false);
-            int noColumns = db.Remove("all_discounted_products", "xxx");
-            lLoggerDB.Text = noColumns + " lines affected.";
-            db.CloseConnection();
+            if (initialDbColumns == null) MessageBox.Show("Error: please read files first");
+            lLoggerDB.Text = string.Empty;
+            //1. Get modified (or not) columns 
+            List<string> modifiedDbColumns = rtbColumnsOld.Text.Split('\n').ToList().Where(s => !string.IsNullOrEmpty(s)).ToList();
+            modifiedDbColumns.Sort();
+            initialDbColumns.Sort();
+
+            if (modifiedDbColumns.SequenceEqual(initialDbColumns))
+            {
+                lLoggerDB.Text = "No column has been modified";
+            }
+
+            //2. Check if elements has been added
+            List<string> added = modifiedDbColumns.Except(initialDbColumns).ToList();
+
+            //3. Check if elements has been deleted
+            List<string> deleted = initialDbColumns.Except(modifiedDbColumns).ToList();
+
+            //4. Get the lists of real added, modified and deleted columns
+            string realAdded = string.Empty;
+            string realDeleted = string.Empty;
+            string oldValue = string.Empty;
+            string newValue = string.Empty;
+            //set real values
+            if (added.Count == 1 && deleted.Count == 1)
+            {
+                oldValue = deleted[0];
+                newValue = added[0];
+            }
+            else
+            if (added.Count == 1 && deleted.Count == 0)
+            {
+                realAdded = added[0];
+            }
+            else
+            if (added.Count == 0 && deleted.Count == 1)
+            {
+                realDeleted = deleted[0];
+            }
+            else
+            {
+                MessageBox.Show("Error: there are too many changes into DB. Please make only ONE change and update.");
+            }
+            //display the values
+            if (oldValue != string.Empty && newValue != string.Empty)
+            {
+                lLoggerDB.Text += "Modified: Old -> " + oldValue + "; New -> " + newValue + "; ";
+
+            }
+            else
+            if (realAdded != string.Empty)
+            {
+                lLoggerDB.Text = "Added: " + realAdded + "; ";
+            }
+            else
+            if (realDeleted != string.Empty)
+            {
+                lLoggerDB.Text += "Deleted: " + realDeleted + "; ";
+            }
+            //db.OpenConnection();
+            ////db.Add("all_discounted_products", "xxx", true, 100, false);
+            //int noColumns = db.Remove("all_discounted_products", "xxx");
+            //lLoggerDB.Text = noColumns + " lines affected.";
+            //db.CloseConnection();
         }
     }
 }
