@@ -1,0 +1,8 @@
+.menu-area
+{
+    display: block;
+    float: left;
+    width: 237px;
+    height: 100%;
+    background-color: blueviolet;
+}
