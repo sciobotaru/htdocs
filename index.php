@@ -30,6 +30,14 @@ connectToDatabase();
 
     <!-- Product area begin -->
     <div class="col-sm-8 text-left"> 
+    <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ordoneaza dupa
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">Discount</a></li>
+      <li><a href="#">Pret</a></li>
+    </ul>
+  </div>
         <div class="row product-list" id="productList">
             <?php getProducts(); ?>
         </div>
