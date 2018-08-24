@@ -13,7 +13,8 @@ connectToDatabase();
 
     <body>
     
-    <?php getNavBar(); ?>
+    <?php getNavBar2(); ?>
+    <?php getSearchBar(); ?>
   
 <div class="container-fluid text-center">   
   <div class="row content">
@@ -21,23 +22,14 @@ connectToDatabase();
 <!-- ##########################################-->      
 
     <!-- Filter area begin -->
-    <div class="col-sm-2 sidenav">
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-      <p><a href="#">Link</a></p>
-    </div>
+    <?php getSideFilter(); ?>
     <!-- Filter area end -->
 
     <!-- Product area begin -->
     <div class="col-sm-8 text-left"> 
-    <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ordoneaza dupa
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">Discount</a></li>
-      <li><a href="#">Pret</a></li>
-    </ul>
-  </div>
+      
+      <?php getSortDropdown(); ?>
+
         <div class="row product-list" id="productList">
             <?php getProducts(); ?>
         </div>

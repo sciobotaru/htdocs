@@ -13,4 +13,7 @@ include 'assets/php/view/head.php';
 include 'assets/php/view/pagination.php';
 include 'assets/php/view/bannerInfo.php';
 include 'assets/php/view/filterInfo.php';
+include 'assets/php/view/sideFilter.php';
+include 'assets/php/view/sortDropdown.php';
+
 ?>  
