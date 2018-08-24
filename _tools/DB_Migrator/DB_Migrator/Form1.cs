@@ -66,78 +66,81 @@ namespace DB_Migrator
             {
                 lLoggerDB.Text = "No column has been modified";
             }
+            else
+            {
 
-            //2. Check if elements has been added
-            List<string> added = modifiedDbColumns.Except(initialDbColumns).ToList();
+                //2. Check if elements has been added
+                List<string> added = modifiedDbColumns.Except(initialDbColumns).ToList();
 
-            //3. Check if elements has been deleted
-            List<string> deleted = initialDbColumns.Except(modifiedDbColumns).ToList();
+                //3. Check if elements has been deleted
+                List<string> deleted = initialDbColumns.Except(modifiedDbColumns).ToList();
 
-            //4. Get the lists of real added, modified and deleted columns
-            string realAdded = string.Empty;
-            string realDeleted = string.Empty;
-            string oldValue = string.Empty;
-            string newValue = string.Empty;
-            //set real values
-            if (added.Count == 1 && deleted.Count == 1)
-            {
-                oldValue = deleted[0];
-                newValue = added[0];
-            }
-            else
-            if (added.Count == 1 && deleted.Count == 0)
-            {
-                realAdded = added[0];
-            }
-            else
-            if (added.Count == 0 && deleted.Count == 1)
-            {
-                realDeleted = deleted[0];
-            }
-            else
-            {
-                MessageBox.Show("Error: there are too many changes into DB. Please make only ONE change and update.");
-            }
-            //modify the database
-            if (oldValue != string.Empty && newValue != string.Empty) // => update (change column name)
-            {
-                lLoggerDB.Text += "Modified: Old -> " + oldValue + "; New -> " + newValue + "; ";
-                db.OpenConnection();
-                int lines = db.Update("all_discounted_products", oldValue, newValue);
-                MessageBox.Show("Go to myphpadmin and adjust the type of the column (currently is char(300))");
-                db.CloseConnection();
-            }
-            else
-            if (realAdded != string.Empty) // => add column
-            {
-                lLoggerDB.Text = "Added: " + realAdded + "; ";
-                db.OpenConnection();
-                if (cbAddStr.Checked == true)
+                //4. Get the lists of real added, modified and deleted columns
+                string realAdded = string.Empty;
+                string realDeleted = string.Empty;
+                string oldValue = string.Empty;
+                string newValue = string.Empty;
+                //set real values
+                if (added.Count == 1 && deleted.Count == 1)
                 {
-                    db.Add("all_discounted_products", realAdded, true, 200, false, false);
-                    lLoggerDB.Text += "The column is of type string.";
+                    oldValue = deleted[0];
+                    newValue = added[0];
                 }
                 else
-                    if(cbAddInt.Checked == true)
+                if (added.Count == 1 && deleted.Count == 0)
                 {
-                    db.Add("all_discounted_products", realAdded, false, 0, true, false);
-                    lLoggerDB.Text += "The column is of type string.";
+                    realAdded = added[0];
                 }
                 else
-                    if(cbAddBool.Checked == true)
+                if (added.Count == 0 && deleted.Count == 1)
                 {
-                    db.Add("all_discounted_products", realAdded, false, 200, false, true);
-                    lLoggerDB.Text += "The column is of type string.";
+                    realDeleted = deleted[0];
                 }
-                db.CloseConnection();
-            }
-            else
-            if (realDeleted != string.Empty)
-            {
-                lLoggerDB.Text += "Deleted: " + realDeleted + "; ";
-                db.OpenConnection();
-                db.Remove("all_discounted_products", realDeleted);
-                db.CloseConnection();
+                else
+                {
+                    MessageBox.Show("Error: there are too many changes into DB. Please make only ONE change and update.");
+                }
+                //modify the database
+                if (oldValue != string.Empty && newValue != string.Empty) // => update (change column name)
+                {
+                    lLoggerDB.Text += "Modified: Old -> " + oldValue + "; New -> " + newValue + "; ";
+                    db.OpenConnection();
+                    int lines = db.Update("all_discounted_products", oldValue, newValue);
+                    MessageBox.Show("Go to myphpadmin and adjust the type of the column (currently is char(300))");
+                    db.CloseConnection();
+                }
+                else
+                if (realAdded != string.Empty) // => add column
+                {
+                    lLoggerDB.Text = "Added: " + realAdded + "; ";
+                    db.OpenConnection();
+                    if (cbAddStr.Checked == true)
+                    {
+                        db.Add("all_discounted_products", realAdded, true, 200, false, false);
+                        lLoggerDB.Text += "The column is of type string.";
+                    }
+                    else
+                        if (cbAddInt.Checked == true)
+                    {
+                        db.Add("all_discounted_products", realAdded, false, 0, true, false);
+                        lLoggerDB.Text += "The column is of type string.";
+                    }
+                    else
+                        if (cbAddBool.Checked == true)
+                    {
+                        db.Add("all_discounted_products", realAdded, false, 200, false, true);
+                        lLoggerDB.Text += "The column is of type string.";
+                    }
+                    db.CloseConnection();
+                }
+                else
+                if (realDeleted != string.Empty)
+                {
+                    lLoggerDB.Text += "Deleted: " + realDeleted + "; ";
+                    db.OpenConnection();
+                    db.Remove("all_discounted_products", realDeleted);
+                    db.CloseConnection();
+                }
             }
             #endregion
 
