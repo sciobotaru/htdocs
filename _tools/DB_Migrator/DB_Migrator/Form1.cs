@@ -33,6 +33,8 @@ namespace DB_Migrator
             xml = new Xml();
             xmlToDb = new XmlToDbMapper();
             bUpdate.Enabled = false;
+            rtbPathProduct.Text += xml.FullPath + " (make sure project is still buildable)";
+            rtbPathDbconnector.Text += xmlToDb.FullPath + " (make sure admin.php is working)";
         }
 
         private void bReadFiles_Click(object sender, EventArgs e)
