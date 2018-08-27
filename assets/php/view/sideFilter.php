@@ -1,30 +1,9 @@
 <?php
-function getSideFilter()
+function getSideFilterCard()
 {
 ?>
-<div class="side-filter">
-    <div class="col-sm-2">
 
 <div class="card">
-	<article class="card-group-item">
-		<header class="card-header">
-			<h6 class="title">Range input </h6>
-		</header>
-		<div class="filter-content">
-			<div class="card-body">
-			<div class="form-row">
-			<div class="form-group col-md-6">
-			  <label>Min</label>
-			  <input type="number" class="form-control" id="inputEmail4" placeholder="$0">
-			</div>
-			<div class="form-group col-md-6 text-right">
-			  <label>Max</label>
-			  <input type="number" class="form-control" placeholder="$1,0000">
-			</div>
-			</div>
-			</div> <!-- card-body.// -->
-		</div>
-	</article> <!-- card-group-item.// -->
 	<article class="card-group-item">
 		<header class="card-header">
 			<h6 class="title">Selection </h6>
@@ -59,10 +38,6 @@ function getSideFilter()
 	</article> <!-- card-group-item.// -->
 </div> <!-- card.// -->
 
-
-
-    </div>
-</div>
 <?php
 }
 ?>
