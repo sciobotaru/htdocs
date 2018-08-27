@@ -1,5 +1,8 @@
-@media (min-width: 768px)  {
-    .side-filter {
-        display: block;
-    }
+.clickable{
+    cursor: pointer;   
+}
+
+.panel-heading span {
+    margin-top: -20px;
+	font-size: 15px;
 }
