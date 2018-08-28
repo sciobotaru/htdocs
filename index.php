@@ -23,14 +23,11 @@ connectToDatabase();
     <div class="col-sm-8 text-left"> 
       <?php getProducts4(); ?>
     </div>
-    <div class="col-sm-2 sidenav">
-      <div class="well">
-        <p>ADS</p>
-      </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
+
+    <div class="col-sm-2 sidenav" style="padding-top: 20px;padding-left:0;padding-right:0;">
+      <?php getPromotions(); ?>
     </div>
+    
   </div>
 </div>
 

@@ -1,6 +1,7 @@
 <?php
 function getSideFilterCard()
 {
+    getFilterButtons();
 	getCardBrand();
 	getCardRAM();
 	getCardInternalMemory();
@@ -189,6 +190,16 @@ function getCardRezolutie()
     <!-- card-group-item.// -->
 </div>
 
+<?php
+}
+?>
+
+<?php
+function getFilterButtons()
+{
+?>
+<button type="button" class="btn btn-outline-secondary" style="width:inherit;margin-bottom: 10px">Filtru clasic</button>
+<button type="button" class="btn btn-outline-secondary" style="width:100%;margin-bottom:10px">Filtru prietenos</button>
 <?php
 }
 ?>

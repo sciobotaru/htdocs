@@ -15,5 +15,5 @@ include 'assets/php/view/bannerInfo.php';
 include 'assets/php/view/filterInfo.php';
 include 'assets/php/view/sideFilter.php';
 include 'assets/php/view/sortDropdown.php';
-
+include 'assets/php/view/promotions.php';
 ?>  
