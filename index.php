@@ -27,11 +27,11 @@ connectToDatabase();
     <div class="col-sm-2 sidenav" style="padding-top: 20px;padding-left:0;padding-right:0;">
       <?php getPromotions(); ?>
     </div>
-    
+
   </div>
 </div>
 
-<?php getFooter(); ?>
+<?php getFooter2(); ?>
 
 
 	</body>
