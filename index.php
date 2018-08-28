@@ -8,7 +8,7 @@ connectToDatabase();
 <!DOCTYPE html>
 <html>
 	<head>
-			<?php getHeadBootstrap400(); ?>
+			<?php getHeadBootstrap413(); ?>
 	</head>
 
 	<body>

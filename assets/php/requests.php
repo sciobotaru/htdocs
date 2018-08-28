@@ -10,11 +10,11 @@ $query = NULL;
 function parseRequest()
 {
     global $hotDealsMessage;
-    global $requestPage="";
-    global $requestCategorie="";
-    global $requestPret="";
-    global $requestMagazin="";
-    global $requestSearch="";
+    global $requestPage;
+    global $requestCategorie;
+    global $requestPret;
+    global $requestMagazin;
+    global $requestSearch;
     global $query;
 
     $parts = parse_url($_SERVER['REQUEST_URI']);
