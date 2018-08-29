@@ -21,6 +21,7 @@ connectToDatabase();
       <?php getSideFilterCard(); ?>
     </div>
     <div class="col-sm-8 text-left"> 
+      <?php getSortDropdown(); ?>
       <?php getProducts4(); ?>
     </div>
 

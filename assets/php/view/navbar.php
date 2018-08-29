@@ -114,30 +114,32 @@ function getSearchBar3()
 function getNavBar4()
 {
 ?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background: #007b5e !important;">
+  <a class="navbar-brand" href="#">ElectroDeals</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
+      <!--
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
+      -->
       <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="#">Lista magazine</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="#">Promotii active</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
+          Sistem de operare preferat
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#">Android</a>
+          <a class="dropdown-item" href="#">iOS</a>
+          <a class="dropdown-item" href="#">Windows</a>
         </div>
       </li>
     </ul>
@@ -152,10 +154,10 @@ function getSearchBar4()
 {
 ?>
 <!-- Search bar -->
-<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark"  style="background: #007b5e !important;">
   <div class="navbar-collapse">
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" type="text" placeholder="Cauta in oferte" aria-label="Search">
     </form>
   </div>
 </nav>
