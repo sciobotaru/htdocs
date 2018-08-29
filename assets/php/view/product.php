@@ -242,27 +242,39 @@ function getProducts4()
 ?>
 <div class="card-deck" style="padding-top:20px; padding-bottom:20px;">
 
-  <div class="card" style="min-width:280px; max-width:280px; height:500px; margin-bottom:25px;">
+    <div class="card" style="min-width:280px; max-width:280px; height:500px; margin-bottom:25px;">
+        <div style="background-color:#cadbf7; margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
+            <img src="assets/img/badabum.jpg" height="100%" margin-left="0">
+        </div>
+        <div style="background-color:#fbfca6; width:100%;height:290px;">
+            <div style="background-color:#4e5156; height:100%; width:70px; display:block;float:left;">
+            </div>
+            <div style="background-color:#f0f2b5; height:100%; width:200px; margin-left:70px;width:208px;">
+                <img src="assets/img/productBadabum.jpeg" width="100%">
+            </div>
+        </div>
+    </div>
 
-  </div>
-
-  <div class="card" style="min-width:280px; max-width:280px; height:500px; margin-bottom:25px;">
-
-</div>
-
-  <div class="card" style="min-width:280px;max-width:280px; height:500px; margin-bottom:25px;">
-
-</div>
-
-  <div class="card" style="min-width:280px;max-width:280px; height:500px; margin-bottom:25px;">
-
-</div>
-
-  <div class="card" style="min-width:280px;max-width:280px; height:500px; margin-bottom:25px;">
-
-</div>
-
-
+   <div class="card" style="min-width:280px; max-width:280px; height:500px; margin-bottom:25px;">
+      <div style="border:solid 1px #333; margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
+         <img src="assets/img/evomag.jpg" height="100%" margin-left="0">
+      </div>
+   </div>
+   <div class="card" style="min-width:280px;max-width:280px; height:500px; margin-bottom:25px;">
+      <div style="border:solid 1px #333; margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
+         <img src="assets/img/f64.jpg" height="100%" margin-left="0">
+      </div>
+   </div>
+   <div class="card" style="min-width:280px;max-width:280px; height:500px; margin-bottom:25px;">
+      <div style="border:solid 1px #333; margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
+         <img src="assets/img/itgalaxy.jpg" height="100%" margin-left="0">
+      </div>
+   </div>
+   <div class="card" style="min-width:280px;max-width:280px; height:500px; margin-bottom:25px;">
+      <div style="border:solid 1px #333; margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
+         <img src="assets/img/pcgarage.jpg" height="100%" margin-left="0">
+      </div>
+   </div>
 </div>
 <?php
 }
