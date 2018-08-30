@@ -16,13 +16,17 @@ connectToDatabase();
 		<?php getSearchBar4(); ?>
 
 		<div class="container-fluid text-center">    
-  <div class="row content" style="padding-left: 50px; padding-right: 50px;">
-    <div class="col-sm-2 sidenav" style="padding-top: 20px;">
+  <div class="row content" style="padding-left: 50px; padding-right: 10px;">
+   
+    <div class="col-sm-2 sidenav" style="padding-top: 20px;min-width: 230px;">
       <?php getSideFilterCard(); ?>
     </div>
+
     <div class="col-sm-8 text-left"> 
       <?php getSortDropdown(); ?>
-      <?php getProducts4(); ?>
+      <div class="card-deck" style="padding-top:20px; padding-bottom:20px;">
+        <?php getProducts4(); ?>
+      </div>
     </div>
 
     <div class="col-sm-2 sidenav" style="padding-top: 20px;padding-left:0;padding-right:0;">
