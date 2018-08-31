@@ -5,3 +5,10 @@ D:\GoogleDrive\PROJECTS\ED\_START\Start_ED_Project\Start_ED_Project\obj\Debug\St
 D:\GoogleDrive\PROJECTS\ED\_START\Start_ED_Project\Start_ED_Project\obj\Debug\Start_ED_Project.csproj.CoreCompileInputs.cache
 D:\GoogleDrive\PROJECTS\ED\_START\Start_ED_Project\Start_ED_Project\obj\Debug\Start_ED_Project.exe
 D:\GoogleDrive\PROJECTS\ED\_START\Start_ED_Project\Start_ED_Project\obj\Debug\Start_ED_Project.pdb
+C:\Apache24\htdocs\_tools\Start_ED_Project\Start_ED_Project\bin\Debug\Start_ED_Project.exe.config
+C:\Apache24\htdocs\_tools\Start_ED_Project\Start_ED_Project\bin\Debug\Start_ED_Project.exe
+C:\Apache24\htdocs\_tools\Start_ED_Project\Start_ED_Project\bin\Debug\Start_ED_Project.pdb
+C:\Apache24\htdocs\_tools\Start_ED_Project\Start_ED_Project\obj\Debug\Start_ED_Project.csprojResolveAssemblyReference.cache
+C:\Apache24\htdocs\_tools\Start_ED_Project\Start_ED_Project\obj\Debug\Start_ED_Project.csproj.CoreCompileInputs.cache
+C:\Apache24\htdocs\_tools\Start_ED_Project\Start_ED_Project\obj\Debug\Start_ED_Project.exe
+C:\Apache24\htdocs\_tools\Start_ED_Project\Start_ED_Project\obj\Debug\Start_ED_Project.pdb

@@ -54,7 +54,7 @@ namespace Start_ED_Project
             Console.WriteLine("========================================================");
 
             Console.WriteLine("Starting VSCode...");
-            System.Diagnostics.Process.Start(@"C:\Program Files\Microsoft VS Code\Code.exe");
+            System.Diagnostics.Process.Start(@"C:\Users\SCiobotaru\AppData\Local\Programs\Microsoft VS Code\Code.exe");
             Console.WriteLine("VSCode started!");
 
             Console.WriteLine("Pause 1 minute before closing");
