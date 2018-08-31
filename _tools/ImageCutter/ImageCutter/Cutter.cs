@@ -78,12 +78,6 @@ namespace ImageCutter
                 return target;
             }
             catch { return originalImage; }
-            //(Exception ex)
-            //{
-            //    throw new Exception(
-            //      string.Format("Values are topmost={0} btm={1} left={2} right={3}", topmost, bottommost, leftmost, rightmost),
-            //      ex);
-            //}
         }
     }
 }

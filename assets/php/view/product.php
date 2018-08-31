@@ -242,46 +242,18 @@ function getProducts4()
     for($i=1; $i <= 8; $i++)
     {
 ?>
-
-
-    <div class="card" style="min-width:250px; max-width:250px; height:450px; margin-bottom:25px;">
-        <div style="margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
-            <img src="assets/img/badabum.jpg" height="100%" margin-left="0">
+<div class="card" style="min-width:250px; max-width:250px; height:450px; margin-bottom:25px;">
+    <div style="margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
+        <img src="assets/img/badabum.jpg" height="100%" margin-left="0">
+    </div>
+    <div style="width:100%;height:290px;">
+        <div style="background-color:rgba(0,0,0,.03);border-top: 1px solid rgba(0,0,0,.125);border-bottom: 1px solid rgba(0,0,0,.125);border-radius:3px; height:100%; width:70px; display:block;float:left;">
         </div>
-        <div style="width:100%;height:290px;">
-            <div style="background-color:rgba(0,0,0,.03);border-top: 1px solid rgba(0,0,0,.125);border-bottom: 1px solid rgba(0,0,0,.125);border-radius:3px; height:100%; width:70px; display:block;float:left;">
-            </div>
-            <div style="height:100%; width:200px; margin-left:70px;width:178px;text-align:center">
-                <img src="assets/img/productPcgarage.jpg" height="100%">
-            </div>
+        <div style="height:100%; width:200px; margin-left:70px;width:178px;text-align:center">
+            <img src="assets/img/productPcgarage.jpg" height="100%">
         </div>
     </div>
-<!--
-   <div class="card" style="min-width:280px; max-width:280px; height:500px; margin-bottom:25px;">
-      <div style="border:solid 1px #333; margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
-         <img src="assets/img/evomag.jpg" height="100%" margin-left="0">
-      </div>
-   </div>
-
-   <div class="card" style="min-width:280px;max-width:280px; height:500px; margin-bottom:25px;">
-      <div style="border:solid 1px #333; margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
-         <img src="assets/img/f64.jpg" height="100%" margin-left="0">
-      </div>
-   </div>
-
-   <div class="card" style="min-width:280px;max-width:280px; height:500px; margin-bottom:25px;">
-      <div style="border:solid 1px #333; margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
-         <img src="assets/img/itgalaxy.jpg" height="100%" margin-left="0">
-      </div>
-   </div>
-
-   <div class="card" style="min-width:280px;max-width:280px; height:500px; margin-bottom:25px;">
-      <div style="border:solid 1px #333; margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
-         <img src="assets/img/pcgarage.jpg" height="100%" margin-left="0">
-      </div>
-   </div>
-
--->
+</div>
 <?php
     }
 }
