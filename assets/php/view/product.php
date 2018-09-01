@@ -245,9 +245,37 @@ function getProducts4()
 <div class="card" style="min-width:250px; max-width:250px; height:450px; margin-bottom:25px;">
     <div style="margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
         <img src="assets/img/badabum.jpg" height="100%" margin-left="0">
+        <div style="margin-right: 0;height: 100%;width: 30px;display:  block;float:  right;">
+    	    <i class="fas fa-info-circle" style="font-size: 25px;margin: 2px;"></i>
+        </div>
     </div>
     <div style="width:100%;height:290px;">
-        <div style="background-color:rgba(0,0,0,.03);border-top: 1px solid rgba(0,0,0,.125);border-bottom: 1px solid rgba(0,0,0,.125);border-radius:3px; height:100%; width:70px; display:block;float:left;">
+        <div style="background-color:rgba(0,0,0,.03);border-top: 1px solid rgba(0,0,0,.125);border-bottom: 1px solid rgba(0,0,0,.125);border-radius:3px; height:100%; width:60px; display:block;float:left;">
+            
+            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 40px;"> 
+                <i class="far fa-arrow-alt-circle-up" style="font-size: 30px;padding: 5px;color: #f52929;"></i>
+            </div>
+
+            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 40px;"> 
+                <i class="fas fa-star-half-alt" style="font-size: 30px;padding: 5px;"></i>
+            </div>
+
+            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 40px;"> 
+                <i class="fas fa-history" style="font-size: 30px;padding: 5px;"></i>
+            </div>
+
+            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 40px;"> 
+                <i class="fab fa-youtube" style="font-size: 30px;padding: 5px;color: #f52929;"></i>
+            </div>
+
+            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 40px;"> 
+                <i class="fas fa-share-alt" style="font-size: 30px;padding: 5px;color: #7c79e4;"></i>
+            </div>
+
+            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 40px;"> 
+                <i class="far fa-thumbs-up" style="font-size: 30px;padding: 5px;color: #443fe8;"></i>
+            </div>
+
         </div>
         <div style="height:100%; width:200px; margin-left:70px;width:178px;text-align:center">
             <img src="assets/img/productPcgarage.jpg" height="100%">
