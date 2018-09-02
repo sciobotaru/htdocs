@@ -242,7 +242,7 @@ function getProducts4()
     for($i=1; $i <= 8; $i++)
     {
 ?>
-<div class="card" style="min-width:250px; max-width:250px; height:450px; margin-bottom:25px;">
+<div class="card" style="min-width:250px; max-width:250px; height:490px; margin-bottom:25px;">
     <div style="margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
         <img src="assets/img/badabum.jpg" height="100%" margin-left="0">
         <div style="margin-right: 0;height: 100%;width: 30px;display:  block;float:  right;">
@@ -252,34 +252,109 @@ function getProducts4()
     <div style="width:100%;height:290px;">
         <div style="background-color:rgba(0,0,0,.03);border-top: 1px solid rgba(0,0,0,.125);border-bottom: 1px solid rgba(0,0,0,.125);border-radius:3px; height:100%; width:60px; display:block;float:left;">
             
-            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 40px;"> 
-                <i class="far fa-arrow-alt-circle-up" style="font-size: 30px;padding: 5px;color: #f52929;"></i>
+            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;"> 
+                <i class="far fa-arrow-alt-circle-up" style="font-size: 30px;padding-top: 2px;color: #f52929;"></i>
+                <p style="font-size: 9px;font-weight: bold;">Evolutie</p>
             </div>
 
-            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 40px;"> 
-                <i class="fas fa-star-half-alt" style="font-size: 30px;padding: 5px;"></i>
+            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;"> 
+                <i class="fas fa-star-half-alt" style="font-size: 30px;padding-top: 2px;"></i>
+                <p style="font-size: 11px;font-weight: bold;">3.8/5</p>
             </div>
 
-            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 40px;"> 
-                <i class="fas fa-history" style="font-size: 30px;padding: 5px;"></i>
+            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;"> 
+                <i class="fas fa-history" style="font-size: 30px;padding-top: 2px;"></i>
+                <p style="font-size: 9px;font-weight: bold;">Istoric</p>
             </div>
 
-            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 40px;"> 
-                <i class="fab fa-youtube" style="font-size: 30px;padding: 5px;color: #f52929;"></i>
+            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;"> 
+                <i class="fab fa-youtube" style="font-size: 30px;padding-top: 2px;color: #f52929;"></i>
+                <p style="font-size: 9px;font-weight: bold;">Youtube</p>
             </div>
 
-            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 40px;"> 
-                <i class="fas fa-share-alt" style="font-size: 30px;padding: 5px;color: #7c79e4;"></i>
+            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;"> 
+                <i class="fas fa-share-alt" style="font-size: 30px;padding-top: 2px;color: #7c79e4;"></i>
+                <p style="font-size: 9px;font-weight: bold;">Share</p>
             </div>
 
-            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 40px;"> 
-                <i class="far fa-thumbs-up" style="font-size: 30px;padding: 5px;color: #443fe8;"></i>
+            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;"> 
+                <i class="far fa-thumbs-up" style="font-size: 30px;padding-top: 2px;color: #443fe8;"></i>
+                <p style="font-size: 9px;font-weight: bold;">Voteaza (343)</p>
             </div>
 
         </div>
         <div style="height:100%; width:200px; margin-left:70px;width:178px;text-align:center">
             <img src="assets/img/productPcgarage.jpg" height="100%">
         </div>
+    </div>
+
+    <div style="
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    height: 60px;">
+        <div style="
+        border-right: 1px solid rgba(0,0,0,.125);
+        height: 100%;
+        width: 83px;
+        display:  block;
+        float:  left;">
+            <div style="
+            text-align:  center;
+            height: 50%;
+            border-bottom: 1px solid rgba(0,0,0,.125);
+            ">
+                <p>RAM 3 GB</p>
+            </div>
+                <div style="
+                height: 50%;
+                text-align:  center;
+                ">
+                    <p>64 GB</p>
+                </div>
+        </div>
+
+        <div style="
+        border-right: 1px solid rgba(0,0,0,.125);
+        height: 100%;
+        width: 83px;
+        display:  block;
+        float:  left;">
+            <div style="
+            text-align:  center;
+            height: 50%;
+            border-bottom: 1px solid rgba(0,0,0,.125);
+            ">
+                <p>S AMOLED</p>
+            </div>
+                <div style="
+                height: 50%;
+                text-align:  center;
+                ">
+                    <p>5.2"</p>
+                </div>
+        </div>
+
+
+        <div style="
+        height: 100%;
+        width: 82px;
+        display:  block;
+        float:  left;">
+            <div style="
+            text-align:  center;
+            height: 50%;
+            border-bottom: 1px solid rgba(0,0,0,.125);
+            ">
+                <p>5/2 MP</p>
+            </div>
+                <div style="
+                height: 50%;
+                text-align:  center;
+                ">
+                    <p>1.2GH Octa</p>
+                </div>
+        </div>
+
     </div>
 </div>
 <?php
