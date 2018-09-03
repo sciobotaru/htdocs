@@ -242,123 +242,134 @@ function getProducts4()
     for($i=1; $i <= 8; $i++)
     {
 ?>
+
 <div class="card" style="min-width:250px; max-width:250px; height:490px; margin-bottom:25px;">
-    <div style="margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
-        <img src="assets/img/badabum.jpg" height="100%" margin-left="0">
-        <div style="margin-right: 0;height: 100%;width: 30px;display:  block;float:  right;">
-    	    <i class="fas fa-info-circle" style="font-size: 25px;margin: 2px;"></i>
-        </div>
-    </div>
+    <?php getShopInfo(); ?>
     <div style="width:100%;height:290px;">
-        <div style="background-color:rgba(0,0,0,.03);border-top: 1px solid rgba(0,0,0,.125);border-bottom: 1px solid rgba(0,0,0,.125);border-radius:3px; height:100%; width:60px; display:block;float:left;">
-            
-            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;"> 
-                <i class="far fa-arrow-alt-circle-up" style="font-size: 30px;padding-top: 2px;color: #f52929;"></i>
-                <p style="font-size: 9px;font-weight: bold;">Evolutie</p>
-            </div>
-
-            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;"> 
-                <i class="fas fa-star-half-alt" style="font-size: 30px;padding-top: 2px;"></i>
-                <p style="font-size: 11px;font-weight: bold;">3.8/5</p>
-            </div>
-
-            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;"> 
-                <i class="fas fa-history" style="font-size: 30px;padding-top: 2px;"></i>
-                <p style="font-size: 9px;font-weight: bold;">Istoric</p>
-            </div>
-
-            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;"> 
-                <i class="fab fa-youtube" style="font-size: 30px;padding-top: 2px;color: #f52929;"></i>
-                <p style="font-size: 9px;font-weight: bold;">Youtube</p>
-            </div>
-
-            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;"> 
-                <i class="fas fa-share-alt" style="font-size: 30px;padding-top: 2px;color: #7c79e4;"></i>
-                <p style="font-size: 9px;font-weight: bold;">Share</p>
-            </div>
-
-            <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;"> 
-                <i class="far fa-thumbs-up" style="font-size: 30px;padding-top: 2px;color: #443fe8;"></i>
-                <p style="font-size: 9px;font-weight: bold;">Voteaza (343)</p>
-            </div>
-
-        </div>
-        <div style="height:100%; width:200px; margin-left:70px;width:178px;text-align:center">
-            <img src="assets/img/productPcgarage.jpg" height="100%">
-        </div>
+        <?php getProductSideMenu(); ?>
+        <?php getProductImage(); ?>
     </div>
-
-    <div style="
-    background-color: rgba(0,0,0,.03);
-    border-bottom: 1px solid rgba(0,0,0,.125);
-    height: 60px;">
-        <div style="
-        border-right: 1px solid rgba(0,0,0,.125);
-        height: 100%;
-        width: 83px;
-        display:  block;
-        float:  left;">
-            <div style="
-            text-align:  center;
-            height: 50%;
-            border-bottom: 1px solid rgba(0,0,0,.125);
-            ">
-                <p>RAM 3 GB</p>
-            </div>
-                <div style="
-                height: 50%;
-                text-align:  center;
-                ">
-                    <p>64 GB</p>
-                </div>
-        </div>
-
-        <div style="
-        border-right: 1px solid rgba(0,0,0,.125);
-        height: 100%;
-        width: 83px;
-        display:  block;
-        float:  left;">
-            <div style="
-            text-align:  center;
-            height: 50%;
-            border-bottom: 1px solid rgba(0,0,0,.125);
-            ">
-                <p>S AMOLED</p>
-            </div>
-                <div style="
-                height: 50%;
-                text-align:  center;
-                ">
-                    <p>5.2"</p>
-                </div>
-        </div>
-
-
-        <div style="
-        height: 100%;
-        width: 82px;
-        display:  block;
-        float:  left;">
-            <div style="
-            text-align:  center;
-            height: 50%;
-            border-bottom: 1px solid rgba(0,0,0,.125);
-            ">
-                <p>5/2 MP</p>
-            </div>
-                <div style="
-                height: 50%;
-                text-align:  center;
-                ">
-                    <p>1.2GH Octa</p>
-                </div>
-        </div>
-
-    </div>
+    <?php getProductSpecifications(); ?>
+    <?php getProductInformation(); ?>
 </div>
+
 <?php
     }
 }
 ?>
 
+<?php
+function getShopInfo()
+{
+?>
+<div style="margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
+    <img src="assets/img/badabum.jpg" height="100%" margin-left="0">
+    <div style="margin-right: 0;height: 100%;width: 30px;display:  block;float:  right;">
+        <i class="fas fa-info-circle" style="font-size: 25px;margin: 2px;"></i>
+    </div>
+</div>
+<?php
+}
+?>
+
+<?php
+function getProductSideMenu()
+{
+?>
+<div style="background-color:rgba(0,0,0,.03);border-top: 1px solid rgba(0,0,0,.125);border-bottom: 1px solid rgba(0,0,0,.125);border-radius:3px; height:100%; width:60px; display:block;float:left;">
+    <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;">
+        <i class="far fa-arrow-alt-circle-up" style="font-size: 30px;padding-top: 2px;color: #f52929;"></i>
+        <p style="font-size: 9px;font-weight: bold;">Evolutie</p>
+    </div>
+    <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;">
+        <i class="fas fa-star-half-alt" style="font-size: 30px;padding-top: 2px;color:#f9bf3c;"></i>
+        <p style="font-size: 11px;font-weight: bold;">3.8/5</p>
+    </div>
+    <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;">
+        <i class="fas fa-history" style="font-size: 30px;padding-top: 2px;"></i>
+        <p style="font-size: 9px;font-weight: bold;">Istoric</p>
+    </div>
+    <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;">
+        <i class="fab fa-youtube" style="font-size: 30px;padding-top: 2px;color: #f52929;"></i>
+        <p style="font-size: 9px;font-weight: bold;">Youtube</p>
+    </div>
+    <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;">
+        <i class="fas fa-share-alt" style="font-size: 30px;padding-top: 2px;color: #7c79e4;"></i>
+        <p style="font-size: 9px;font-weight: bold;">Share</p>
+    </div>
+    <div style="height: 48px;text-align:center;">
+        <i class="far fa-thumbs-up" style="font-size: 30px;padding-top: 2px;color: #443fe8;"></i>
+        <p style="font-size: 9px;font-weight: bold;">Voteaza (343)</p>
+    </div>
+</div>
+<?php
+}
+?>
+
+<?php
+function getProductImage()
+{
+?>
+<div style="height:100%; width:200px; margin-left:70px;width:178px;text-align:center">
+    <img src="assets/img/productPcgarage.jpg" height="100%">
+</div>
+<?php
+}
+?>
+
+<?php
+function getProductSpecifications()
+{
+?>
+<div style="background-color: rgba(0,0,0,.03);border-bottom: 1px solid rgba(0,0,0,.125);height: 60px;font-size:13px;font-weight:bold;">
+    <div style="border-right:1px solid rgba(0,0,0,.125);height: 100%;width: 83px;display:block;float:left;">
+        <div style="text-align:center;height:50%;padding-top:2px;border-bottom: 1px solid rgba(0,0,0,.125);">
+        <p>3 GB</p>
+        </div>
+        <div style="height:50%;padding-top:2px;text-align:center;">
+        <p>64 GB</p>
+        </div>
+    </div>
+    <div style="border-right: 1px solid rgba(0,0,0,.125);height: 100%;width: 83px;display:block;float:left;">
+        <div style="text-align:center;height:50%;padding-top:2px;border-bottom: 1px solid rgba(0,0,0,.125);">
+        <p>S AMOLED</p>
+        </div>
+        <div style="height:50%;padding-top:2px;text-align:  center;">
+        <p>5.2"</p>
+        </div>
+    </div>
+    <div style="height: 100%;width: 82px;display:block;float:left;">
+        <div style="text-align:center;height:50%;padding-top:2px;border-bottom: 1px solid rgba(0,0,0,.125);">
+        <p>5/2 MP</p>
+        </div>
+        <div style="height:50%;padding-top:2px;text-align:center;">
+        <p>1.2GH Octa</p>
+        </div>
+    </div>
+</div>
+<?php
+}
+?>
+
+<?php
+function getProductInformation()
+{
+?>
+<div style="height: 109px;">
+   <div style="height: 45%;text-align:  center;">
+      <a href="#" style="padding-top:4px;font-weight:bold;font-size:14px;">Telefon mobil Allview X4 Soul LITE, Dual SIM, Dual Camera, 16GB, 4G,</a>
+   </div>
+   <div style="text-align:center;height: 20%;font-weight:  400;"><span style="color: #091;">In Stoc</span>
+   </div>
+   <div style="height: 30%;">
+      <div style="width: 33%;display:block;float:left;height: 25%;font-size: 11px;padding-top: 5px;padding-left: 5px;"><s>999<sup>00</sup> Lei  </s><span style="font-weight:  bold;">(-36%)</span>
+      </div>
+      <div style="width: 33%;display:block;float:left;height: 25%;font-size: 12px;padding-top: 5px;padding-left: 5px;"><button type="button" class="btn btn-outline-primary btn-sm" style="font-size: 12px;width: 100%;font-weight: bold;padding: 3px;">Vezi oferta</button>
+      </div>
+      <div style="width: 33%;display:block;float:left;height: 25%;font-size: 16px;padding-top: 5px;padding-left: 5px;text-align:  right;color: red;font-weight:  bold;"><span>999<sup>00</sup> Lei</span>
+      </div>
+   </div>
+</div>
+<?php
+}
+?>
