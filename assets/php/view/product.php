@@ -109,134 +109,7 @@ function getProducts()
     }
 }
 
-//private
-function getStars($rating)
-{
-    if($rating == 0)
-    {
-        return
-        '
-        <i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-        ';
-    }
-    elseif($rating > 0 && $rating <= 9)
-    {
-        return
-        '
-        <i class="fa fa-star-half-o"></i>
-		<i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-        ';
-    }
-    elseif($rating >= 10 && $rating < 20)
-    {
-        return
-        '
-        <i class="fa fa-star"></i>
-		<i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-        ';
-    }
-    elseif($rating >= 20 && $rating < 30)
-    {
-        return
-        '
-        <i class="fa fa-star"></i>
-		<i class="fa fa-star-half-o"></i>
-		<i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-        ';
-    }
-    elseif($rating >= 30 && $rating < 40)
-    {
-        return
-        '
-        <i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-		<i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-        ';
-    }
-    elseif($rating >= 40 && $rating <= 50)
-    {
-        return
-        '
-        <i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-		<i class="fa fa-star-half-o"></i>
-		<i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-        ';
-    }
-    elseif($rating > 50 && $rating < 60)
-    {
-        return
-        '
-        <i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-		<i class="fa fa-star-o"></i>
-		<i class="fa fa-star-o"></i>
-        ';
-    }
-    elseif($rating >= 60 && $rating < 70)
-    {
-        return
-        '
-        <i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-		<i class="fa fa-star-half-o"></i>
-		<i class="fa fa-star-o"></i>
-        ';
-    }
-    elseif($rating >= 70 && $rating < 80)
-    {
-        return
-        '
-        <i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-		<i class="fa fa-star-o"></i>
-        ';
-    }
-    elseif($rating >= 80 && $rating < 90)
-    {
-        return
-        '
-        <i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-		<i class="fa fa-star-half-o"></i>
-        ';
-    }
-    else
-    {
-        return
-        '
-        <i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-		<i class="fa fa-star"></i>
-        ';
-    }
-}
-?>
 
-<?php
 function getProducts4()
 {
     for($i=1; $i <= 8; $i++)
@@ -244,6 +117,7 @@ function getProducts4()
 ?>
 
 <div class="card" style="min-width:250px; max-width:250px; height:490px; margin-bottom:25px;">
+    <?php getFlyingDiscount(); ?>
     <?php getShopInfo(); ?>
     <div style="width:100%;height:290px;">
         <?php getProductSideMenu(); ?>
@@ -310,7 +184,7 @@ function getProductSideMenu()
 function getProductImage()
 {
 ?>
-<div style="height:100%; width:200px; margin-left:70px;width:178px;text-align:center">
+<div style="height:100%;margin-left:70px;width:178px;text-align:center">
     <img src="assets/img/productPcgarage.jpg" height="100%">
 </div>
 <?php
@@ -323,26 +197,26 @@ function getProductSpecifications()
 ?>
 <div style="background-color: rgba(0,0,0,.03);border-bottom: 1px solid rgba(0,0,0,.125);height: 60px;font-size:13px;font-weight:bold;">
     <div style="border-right:1px solid rgba(0,0,0,.125);height: 100%;width: 83px;display:block;float:left;">
-        <div style="text-align:center;height:50%;padding-top:2px;border-bottom: 1px solid rgba(0,0,0,.125);">
+        <div style="text-align:center;height:50%;padding-top:5px;border-bottom: 1px solid rgba(0,0,0,.125);">
         <p>3 GB</p>
         </div>
-        <div style="height:50%;padding-top:2px;text-align:center;">
+        <div style="height:50%;padding-top:5px;text-align:center;">
         <p>64 GB</p>
         </div>
     </div>
     <div style="border-right: 1px solid rgba(0,0,0,.125);height: 100%;width: 83px;display:block;float:left;">
-        <div style="text-align:center;height:50%;padding-top:2px;border-bottom: 1px solid rgba(0,0,0,.125);">
+        <div style="text-align:center;height:50%;padding-top:5px;border-bottom: 1px solid rgba(0,0,0,.125);">
         <p>S AMOLED</p>
         </div>
-        <div style="height:50%;padding-top:2px;text-align:  center;">
+        <div style="height:50%;padding-top:5px;text-align:  center;">
         <p>5.2"</p>
         </div>
     </div>
     <div style="height: 100%;width: 82px;display:block;float:left;">
-        <div style="text-align:center;height:50%;padding-top:2px;border-bottom: 1px solid rgba(0,0,0,.125);">
+        <div style="text-align:center;height:50%;padding-top:5px;border-bottom: 1px solid rgba(0,0,0,.125);">
         <p>5/2 MP</p>
         </div>
-        <div style="height:50%;padding-top:2px;text-align:center;">
+        <div style="height:50%;padding-top:5px;text-align:center;">
         <p>1.2GH Octa</p>
         </div>
     </div>
@@ -357,7 +231,7 @@ function getProductInformation()
 ?>
 <div style="height: 109px;">
    <div style="height: 45%;text-align:  center;">
-      <a href="#" style="padding-top:4px;font-weight:bold;font-size:14px;">Telefon mobil Allview X4 Soul LITE, Dual SIM, Dual Camera, 16GB, 4G,</a>
+      <a href="#" style="padding-top:5px;font-weight:bold;font-size:14px;">Telefon mobil Allview X4 Soul LITE, Dual SIM, Dual Camera, 16GB, 4G,</a>
    </div>
    <div style="text-align:center;height: 20%;font-weight:  400;"><span style="color: #091;">In Stoc</span>
    </div>
@@ -370,6 +244,18 @@ function getProductInformation()
       </div>
    </div>
 </div>
+<?php
+}
+?>
+
+<?php
+function getFlyingDiscount()
+{
+?>
+<span style="height: 27px;width: 70px;border-radius: 7px;position: absolute;background: linear-gradient(to right, rgb(136,18,18) , rgb(237,50,38));
+        margin-left: 175px;margin-top: 35px;text-align: center;color: #fff;opacity: 0.9;">
+        <strong>-200 Lei </strong>
+    </span>
 <?php
 }
 ?>
