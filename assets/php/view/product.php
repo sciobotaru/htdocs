@@ -136,10 +136,13 @@ function getProducts4()
 function getShopInfo()
 {
 ?>
-<div style="margin-top:0;width:100%; height:30px; border-radius:3px;" div="">
-    <img src="assets/img/badabum.jpg" height="100%" margin-left="0">
-    <div style="margin-right: 0;height: 100%;width: 30px;display:  block;float:  right;">
-        <i class="fas fa-info-circle" style="font-size: 25px;margin: 2px;"></i>
+<div style="margin-top:0;width:100%;height:30px;border-radius:3px;" div="">
+    <img src="assets/img/pcgarage.jpg" height="100%" margin-left="0">
+    <div style="margin-right: 10px;height: 100%;width: 30px;display:  block;float:  right;">
+        <i class="fas fa-hand-holding-usd" style="font-size: 25px;margin: 2px;color: #575864;"></i>
+    </div>
+    <div style="margin-left: 10px;height: 100%;width: 30px;display:  block;float: left;">
+        <i class="fas fa-info-circle" style="font-size: 20px;margin-top: 5px;margin-left: 6px;color: #575864;"></i>
     </div>
 </div>
 <?php
@@ -160,7 +163,7 @@ function getProductSideMenu()
         <p style="font-size: 11px;font-weight: bold;">3.8/5</p>
     </div>
     <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;">
-        <i class="fas fa-history" style="font-size: 30px;padding-top: 2px;"></i>
+        <i class="fas fa-history" style="font-size: 30px;padding-top: 2px;color: #575864;"></i>
         <p style="font-size: 9px;font-weight: bold;">Istoric</p>
     </div>
     <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;">
@@ -184,7 +187,7 @@ function getProductSideMenu()
 function getProductImage()
 {
 ?>
-<div style="height:100%;margin-left:70px;width:178px;text-align:center">
+<div style="height:100%;margin-left:70px;width:178px;text-align:center;padding:3px;">
     <img src="assets/img/productPcgarage.jpg" height="100%">
 </div>
 <?php
@@ -195,7 +198,7 @@ function getProductImage()
 function getProductSpecifications()
 {
 ?>
-<div style="background-color: rgba(0,0,0,.03);border-bottom: 1px solid rgba(0,0,0,.125);height: 60px;font-size:13px;font-weight:bold;">
+<div style="background-color: rgba(0,0,0,.03);border-bottom: 1px solid rgba(0,0,0,.125);height: 60px;font-size:13px;font-weight:bold;color:#575864;">
     <div style="border-right:1px solid rgba(0,0,0,.125);height: 100%;width: 83px;display:block;float:left;">
         <div style="text-align:center;height:50%;padding-top:5px;border-bottom: 1px solid rgba(0,0,0,.125);">
         <p>3 GB</p>
@@ -252,7 +255,7 @@ function getProductInformation()
 function getFlyingDiscount()
 {
 ?>
-<span style="height: 27px;width: 70px;border-radius: 7px;position: absolute;background: linear-gradient(to right, rgb(136,18,18) , rgb(237,50,38));
+<span style="height: 24px;width: 70px;border-radius: 7px;position: absolute;background: linear-gradient(to right, rgb(136,18,18) , rgb(237,50,38));
         margin-left: 175px;margin-top: 35px;text-align: center;color: #fff;opacity: 0.9;">
         <strong>-200 Lei </strong>
     </span>
