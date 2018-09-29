@@ -10,3 +10,4 @@ C:\Apache24\htdocs\_tools\Start_ED_Project\Start_ED_Project\bin\Release\Start_ED
 C:\Apache24\htdocs\_tools\Start_ED_Project\Start_ED_Project\obj\Release\Start_ED_Project.csproj.CoreCompileInputs.cache
 C:\Apache24\htdocs\_tools\Start_ED_Project\Start_ED_Project\obj\Release\Start_ED_Project.exe
 C:\Apache24\htdocs\_tools\Start_ED_Project\Start_ED_Project\obj\Release\Start_ED_Project.pdb
+C:\Apache24\htdocs\_tools\Start_ED_Project\Start_ED_Project\obj\Release\Start_ED_Project.csprojResolveAssemblyReference.cache

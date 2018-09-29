@@ -116,7 +116,7 @@ function getProducts4()
     {
 ?>
 
-<div class="card" style="min-width:250px; max-width:250px; height:490px; margin-bottom:25px;">
+<div class="card" style="min-width:250px; max-width:250px; height:490px; margin-bottom:25px;border-color:#6c757d;">
     <?php getFlyingDiscount(); ?>
     <?php getShopInfo(); ?>
     <div style="width:100%;height:290px;">

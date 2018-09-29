@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -54,7 +55,14 @@ namespace Start_ED_Project
             Console.WriteLine("========================================================");
 
             Console.WriteLine("Starting VSCode...");
-            System.Diagnostics.Process.Start(@"C:\Users\SCiobotaru\AppData\Local\Programs\Microsoft VS Code\Code.exe");
+            if (File.Exists(@"C:\Users\SCiobotaru\AppData\Local\Programs\Microsoft VS Code\Code.exe"))
+            {
+                System.Diagnostics.Process.Start(@"C:\Users\SCiobotaru\AppData\Local\Programs\Microsoft VS Code\Code.exe"); //work
+            }
+            else
+            {
+                System.Diagnostics.Process.Start(@"C:\Users\stfn_\AppData\Local\Programs\Microsoft VS Code\Code.exe"); //home
+            }
             Console.WriteLine("VSCode started!");
 
             Console.WriteLine("Pause 1 minute before closing");
