@@ -18,11 +18,10 @@ function getHeadBootstrap413() //b4 + enter
   <?php getCustomCSS(); ?>
   <?php getFontAwesome(); ?>
   <?php getEventCSS(); ?>
+  <?php getCustomJS(); ?>
 <?php
 }
 ?>
-
-
 
 <?php
 function getCustomCSS()
@@ -32,7 +31,6 @@ function getCustomCSS()
 <?php
 }
 ?>
-
 
 <?php
 function getFontAwesome()
@@ -53,6 +51,17 @@ function getEventCSS()
     border-radius: 5px;
 }
 </style>
+<?php
+}
+?>
+
+<?php
+function getCustomJS()
+{
+?>
+
+<script src="assets/js/product.js"></script>
+
 <?php
 }
 ?>

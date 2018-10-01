@@ -154,7 +154,7 @@ function getProductSideMenu()
 {
 ?>
 <div style="background-color:rgba(0,0,0,.03);border-top: 1px solid rgba(0,0,0,.125);border-bottom: 1px solid rgba(0,0,0,.125);border-radius:3px; height:100%; width:60px; display:block;float:left;">
-    <div style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;">
+    <div data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="Pretul a <b>crescut</b>. Mai asteapta." style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;">
         <i class="far fa-arrow-alt-circle-up" style="font-size: 30px;padding-top: 2px;color: #f52929;"></i>
         <p style="font-size: 9px;font-weight: bold;">Evolutie</p>
     </div>
