@@ -49,6 +49,7 @@ function getEventCSS()
 .custom-control.custom-checkbox :hover {
     background-color: aliceblue;
     border-radius: 5px;
+    cursor: pointer;
 }
 </style>
 <?php
