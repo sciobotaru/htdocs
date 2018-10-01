@@ -233,8 +233,8 @@ function getProductInformation()
 {
 ?>
 <div style="height: 109px;">
-   <div style="height: 45%;text-align:  center;">
-      <a href="#" style="padding-top:5px;font-weight:bold;font-size:14px;">Telefon mobil Allview X4 Soul LITE, Dual SIM, Dual Camera, 16GB, 4G,</a>
+   <div data-toggle="tooltip" data-placement="top" data-html="true" data-animation="true" data-delay='{ "show": 300, "hide": 0 }' title="Telefon mobil Allview X4 Soul LITE, Dual SIM, Dual Camera, 16GB, 4G, 1.2 GH, Octacore" style="height: 45%;text-align:  center;">
+      <a href="#" style="padding-top:5px;font-weight:bold;font-size:14px;">Telefon mobil Allview X4 Soul LITE, Dual SIM, Dual Camera, 16GB, 4...</a>
    </div>
    <div style="text-align:center;height: 20%;font-weight:  400;"><span style="color: #091;">In Stoc</span>
    </div>
