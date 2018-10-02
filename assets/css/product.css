@@ -162,3 +162,66 @@ i.far.fa-thumbs-up{
 .voteaza:hover i.far.fa-thumbs-up{
     color: #0800ff;
 }
+
+/*specifications area */
+.specifications{
+    background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    height: 60px;
+    font-size:13px;
+    font-weight:bold;
+    color:#575864;
+}
+.specifications .memory{
+    border-right:1px solid rgba(0,0,0,.125);
+    height:100%;
+    width:83px;
+    display:block;
+    float:left;
+}
+.specifications .memory .ram{
+    text-align:center;
+    height:50%;
+    padding-top:5px;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.specifications .memory .internal{
+    height:50%;
+    padding-top:5px;
+    text-align:center;
+}
+.specifications .display{
+    border-right: 1px solid rgba(0,0,0,.125);
+    height: 100%;
+    width: 83px;
+    display:block;
+    float:left;
+}
+.specifications .display .type{
+    text-align:center;
+    height:50%;
+    padding-top:5px;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.specifications .display .size{
+    height:50%;
+    padding-top:5px;
+    text-align:center;
+}
+.specifications .performance{
+    height:100%;
+    width:82px;
+    display:block;
+    float:left;
+}
+.specifications .performance .resolution{
+    text-align:center;
+    height:50%;
+    padding-top:5px;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+.specifications .performance .frequency{
+    height:50%;
+    padding-top:5px;
+    text-align:center;
+}

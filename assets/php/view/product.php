@@ -200,28 +200,28 @@ function getProductImage()
 function getProductSpecifications()
 {
 ?>
-<div style="background-color: rgba(0,0,0,.03);border-bottom: 1px solid rgba(0,0,0,.125);height: 60px;font-size:13px;font-weight:bold;color:#575864;">
-    <div style="border-right:1px solid rgba(0,0,0,.125);height: 100%;width: 83px;display:block;float:left;">
-        <div style="text-align:center;height:50%;padding-top:5px;border-bottom: 1px solid rgba(0,0,0,.125);">
+<div class="specifications">
+    <div class="memory">
+        <div class="ram">
         <p>3 GB</p>
         </div>
-        <div style="height:50%;padding-top:5px;text-align:center;">
+        <div class="internal">
         <p>64 GB</p>
         </div>
     </div>
-    <div style="border-right: 1px solid rgba(0,0,0,.125);height: 100%;width: 83px;display:block;float:left;">
-        <div style="text-align:center;height:50%;padding-top:5px;border-bottom: 1px solid rgba(0,0,0,.125);">
+    <div class="display">
+        <div class="type">
         <p>S AMOLED</p>
         </div>
-        <div style="height:50%;padding-top:5px;text-align:  center;">
+        <div class="size">
         <p>5.2"</p>
         </div>
     </div>
-    <div style="height: 100%;width: 82px;display:block;float:left;">
-        <div style="text-align:center;height:50%;padding-top:5px;border-bottom: 1px solid rgba(0,0,0,.125);">
+    <div class="performance">
+        <div class="resolution">
         <p>5/2 MP</p>
         </div>
-        <div style="height:50%;padding-top:5px;text-align:center;">
+        <div class="frequency">
         <p>1.2GH Octa</p>
         </div>
     </div>
