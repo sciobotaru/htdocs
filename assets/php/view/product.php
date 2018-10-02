@@ -116,7 +116,7 @@ function getProducts4()
     {
 ?>
 
-<div class="card" style="min-width:250px; max-width:250px; height:490px; margin-bottom:25px;border-color:#6c757d;">
+<div class="card custom-card">
     <?php getFlyingDiscount(); ?>
     <?php getShopInfo(); ?>
     <div style="width:100%;height:290px;">
@@ -158,10 +158,12 @@ function getProductSideMenu()
         <i class="far fa-arrow-alt-circle-up"></i>
         <p>Evolutie</p>
     </div>
-    <div class="rating" data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="Rating evaluat de site-ul nostru: <b>3.8</b>. Click pentru review-uri.">
-        <i class="fas fa-star-half-alt"></i>
+
+    <div class="rating" data-toggle="modal" data-target="#exampleModal" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="Rating evaluat de site-ul nostru: <b>3.8</b>. Click pentru review-uri.">
+            <i class="fas fa-star-half-alt"></i>
         <p>3.8/5</p>
     </div>
+
     <div class="istoric" data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="<b>Istoric pret.</b> Click pentru detalii.">
         <i class="fas fa-history"></i>
         <p>Istoric</p>
@@ -260,5 +262,42 @@ function getFlyingDiscount()
         <strong>-200 Lei </strong>
     </span>
 <?php
+}
+?>
+
+<?php
+function getModal()
+{
+?>
+
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<?php
+}
+?>
+
+<?php
+//seteaza datele in modal de ficare data cand e chemat (request in baza de date)
+function setModal()
+{
+
 }
 ?>
