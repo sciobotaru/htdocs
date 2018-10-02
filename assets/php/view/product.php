@@ -136,10 +136,10 @@ function getProducts4()
 function getShopInfo()
 {
 ?>
-<div style="margin-top:0;width:100%;height:30px;border-radius:3px;" div="">
-    <img data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="<b>PCGarage.</b> Click pentru a afla detalii despre magazin." src="assets/img/pcgarage.jpg" style="height:98%;cursor: pointer;">
-    <div data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="Economiseste. Vezi <b>telefoane cu aceleasi performante in alte magazine sau de la alti producatori.</b>" style="margin-right: 10px;height: 100%;width: 30px;display:block;float:right;cursor:pointer;">
-        <i class="fas fa-hand-holding-usd" style="font-size: 25px;margin: 2px;color: #575864;"></i>
+<div class="shop-info">
+    <img data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="<b>PCGarage.</b> Click pentru a afla detalii despre magazin." src="assets/img/pcgarage.jpg">
+    <div class="economiseste" data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="Economiseste. Vezi <b>telefoane cu aceleasi performante in alte magazine sau de la alti producatori.</b>">
+        <i class="fas fa-hand-holding-usd"></i>
     </div>
     <!--<div data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="<b>PCGarage.</b> Click pentru a afla detalii despre magazin." style="margin-left: 10px;height: 100%;width: 30px;display:block;float:left;cursor:pointer;">
         <i class="fas fa-info-circle" style="font-size: 20px;margin-top: 5px;margin-left: 6px;color: #575864;"></i>
@@ -153,30 +153,30 @@ function getShopInfo()
 function getProductSideMenu()
 {
 ?>
-<div style="background-color:rgba(0,0,0,.03);border-top: 1px solid rgba(0,0,0,.125);border-bottom: 1px solid rgba(0,0,0,.125);border-radius:3px; height:100%; width:60px; display:block;float:left;">
-    <div data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="Pretul a <b>crescut</b>. Mai asteapta." style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;">
-        <i class="far fa-arrow-alt-circle-up" style="font-size: 30px;padding-top: 2px;color: #f52929;"></i>
-        <p style="font-size: 9px;font-weight: bold;">Evolutie</p>
+<div class="side-bar">
+    <div class="evolutie" data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="Pretul a <b>crescut</b>. Mai asteapta.">
+        <i class="far fa-arrow-alt-circle-up"></i>
+        <p>Evolutie</p>
     </div>
-    <div data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="Rating evaluat de site-ul nostru: <b>3.8</b>. Click pentru review-uri." style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;cursor:pointer;">
-        <i class="fas fa-star-half-alt" style="font-size: 30px;padding-top: 2px;color:#f9bf3c;"></i>
-        <p style="font-size: 11px;font-weight: bold;">3.8/5</p>
+    <div class="rating" data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="Rating evaluat de site-ul nostru: <b>3.8</b>. Click pentru review-uri.">
+        <i class="fas fa-star-half-alt"></i>
+        <p>3.8/5</p>
     </div>
-    <div data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="<b>Istoric pret.</b> Click pentru detalii." style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;cursor:pointer;">
-        <i class="fas fa-history" style="font-size: 30px;padding-top: 2px;color: #575864;"></i>
-        <p style="font-size: 9px;font-weight: bold;">Istoric</p>
+    <div class="istoric" data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="<b>Istoric pret.</b> Click pentru detalii.">
+        <i class="fas fa-history"></i>
+        <p>Istoric</p>
     </div>
-    <div data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="<b>Vezi review complet</b> pe Youtube. Click pentru vizionare." style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;cursor:pointer;">
-        <i class="fab fa-youtube" style="font-size: 30px;padding-top: 2px;color: #f52929;"></i>
-        <p style="font-size: 9px;font-weight: bold;">Youtube</p>
+    <div class="youtube" data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="<b>Vezi review complet</b> pe Youtube. Click pentru vizionare.">
+        <i class="fab fa-youtube"></i>
+        <p>Youtube</p>
     </div>
-    <div data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="Daca ai gasit un deal, nu-l tine doar pentru tine. <b>Spune-le si prietenilor pe Facebook.</b>" style="border-bottom: 1px solid rgba(0,0,0,.125);height: 48px;text-align:center;cursor:pointer">
-        <i class="fas fa-share-alt" style="font-size: 30px;padding-top: 2px;color: #7c79e4;"></i>
-        <p style="font-size: 9px;font-weight: bold;">Share</p>
+    <div class="share" data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="Daca ai gasit un deal, nu-l tine doar pentru tine. <b>Spune-le si prietenilor pe Facebook.</b>">
+        <i class="fas fa-share-alt"></i>
+        <p>Share</p>
     </div>
-    <div data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="Voteaza deal-ul daca te-a impresionat. Sorteaza produsele dupa voturi si afla ce au votat altii." style="height: 48px;text-align:center;cursor:pointer;">
-        <i class="far fa-thumbs-up" style="font-size: 30px;padding-top: 2px;color: #443fe8;"></i>
-        <p style="font-size: 9px;font-weight: bold;">Voteaza (343)</p>
+    <div class="voteaza" data-toggle="tooltip" data-placement="right" data-html="true" data-animation="true" data-delay='{ "show": 150, "hide": 0 }' title="Voteaza deal-ul daca te-a impresionat. Sorteaza produsele dupa voturi si afla ce au votat altii.">
+        <i class="far fa-thumbs-up"></i>
+        <p>Voteaza (343)</p>
     </div>
 </div>
 <?php
@@ -187,7 +187,7 @@ function getProductSideMenu()
 function getProductImage()
 {
 ?>
-<div style="height:100%;margin-left:70px;width:178px;text-align:center;padding:3px;">
+<div class="product-image">
     <img src="assets/img/productPcgarage.jpg" height="100%">
 </div>
 <?php

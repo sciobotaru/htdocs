@@ -27,7 +27,10 @@ function getHeadBootstrap413() //b4 + enter
 function getCustomCSS()
 {
 ?>
+
 <link rel="stylesheet" href="assets/css/footer.css">
+<link rel="stylesheet" href="assets/css/product.css">
+
 <?php
 }
 ?>
@@ -46,7 +49,7 @@ function getEventCSS()
 {
 ?>
 <style>
-.custom-control.custom-checkbox :hover {
+div.custom-control.custom-checkbox :hover{
     background-color: aliceblue;
     border-radius: 5px;
     cursor: pointer;
