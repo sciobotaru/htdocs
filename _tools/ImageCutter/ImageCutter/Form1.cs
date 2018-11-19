@@ -23,7 +23,7 @@ namespace ImageCutter
                 Bitmap result = null;
                 try
                 {
-                    result = cutter.Crop(fullName);
+                    result = cutter.CropImage(fullName);
                 }catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);

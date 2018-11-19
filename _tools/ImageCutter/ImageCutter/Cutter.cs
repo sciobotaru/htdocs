@@ -5,7 +5,7 @@ namespace ImageCutter
 {
     class Cutter
     {
-        public Bitmap Crop(string path)
+        public Bitmap CropImage(string path)
         {
             int treshold = 230;
 

@@ -1,18 +1,21 @@
 <?php
 include 'dbcredentials.php';
 
-$debug = false;
-$connresult;
+$debug = true;
+
+$connToken; // => connection token
+$allProducts; // => all products from DB
 $where;
 $numberOfRowsFiltered;
 
 $paginationMaxNumber;
 
 //public
+//sursa: http://webdevzoom.com/connect-mysql-database-using-php/
 function connectToDatabase()
 {
     global $debug;
-    global $connresult;
+    global $connToken;
     
     global $server;
     global $username;
@@ -25,52 +28,48 @@ function connectToDatabase()
         echo '<p style="color:green;">DEBUG: Connecting to DB...</p>';
     }
 
-    $connresult=new mysqli($server, $username, $password, $dbname);
-    
-    if($debug)
-    {
-        if($connresult->connect_error)
-        {
-            echo '<p style="color:red;">DEBUG: Connection to DB status: Not connected! '. $connresult->connect_error.'</p>';
-            
-        }else
-        {
-            echo '<p style="color:green;">DEBUG: Connection to DB status: Connected!</p>';
-        }
+    $connToken = @new mysqli($server, $username, $password, $dbname);
+
+    if ($connToken->connect_error) {
+        echo '<p style="color:red;">DEBUG: Connection to DB status: Not connected!'. $con->connect_error.'</p>';
+        exit();
     }
+    echo '<p style="color:green;">DEBUG: Connection to DB status: Connected!</p>';
 }
 
 function closeDBConnection()
 {
-    global $connresult;
+    global $connToken;
     global $debug;
+
+    echo '<p style="color:green;">Closing connection...<br></p>';
     
-    $connresult->close();
+    mysqli_close($connToken);
     
     if($debug)
     {
-    echo '<p style="color:red;">Connection to database CLOSED '. $connresult->connect_error.'</p>';
+        echo '<p style="color:green;">DEBUG: Connection to database CLOSED '. $connToken->connect_error.'</p>';
     }
 }
 
 function clearDatabase()
 {
-    global $connresult;
+    global $connToken;
     $sql = "TRUNCATE TABLE all_discounted_products;";
     
-    if ($connresult->query($sql) === TRUE) 
+    if ($connToken->query($sql) === TRUE) 
     {
         echo "<p>DB with all products cleared successfully</p>";
     } 
     else 
     {
-        echo "Error: " . $sql . "<br>" . $connresult->error;
+        echo "Error: " . $sql . "<br>" . $connToken->error;
     }
 }
 
 function writeXmlToDatabase($xml, $table)
 {
-    global $connresult;
+    global $connToken;
     
     foreach($xml->Product as $Product)
     {   
@@ -122,14 +121,62 @@ function writeXmlToDatabase($xml, $table)
          '$Product->CameraResolution',
          '$Product->ProcessorSpeed')";
         
-        if ($connresult->query($sql) === TRUE) 
+        if ($connToken->query($sql) === TRUE) 
         {
             echo '<p>New record created successfully</p>';
         } 
         else 
         {
-            echo '<p>Error: '. $connresult->error.'</p>';
+            echo '<p>Error: '. $connToken->error.'</p>';
         }
+    }
+}
+
+function getAllProductsFromDatabase()
+{
+    global $connToken; //connection token
+    global $allProducts; //products rom db
+    global $tableDiscounted;
+    global $debug;
+
+    $sql = "SELECT * FROM ".$tableDiscounted;
+    $allProducts = mysqli_query($connToken, $sql);
+
+    if($debug)
+    {
+        if($allProducts)
+        {
+            echo '<p style="color:green;">DEBUG: Query was successfully!</p>';
+            
+        }else
+        {
+            echo '<p style="color:red;">DEBUG: Query failed ('.$sql.')!</p>';
+        }
+    }
+
+    // $row_cnt = mysqli_num_rows($allProducts); //ok
+
+    // echo "Result set has: ".$row_cnt." rows"; //ok
+
+    /* close result set */
+    //mysqli_free_result($allProducts);
+
+    // while ($row = mysqli_fetch_array($allProducts)) //e ok!!!
+    // {
+    //     echo '<p style="color:green;">'.$row['ProductTitle'].'!</p>';
+    // }
+}
+
+function freeAllProductsFromDatabase()
+{
+    global $allProducts;
+    global $debug;
+
+    mysqli_free_result($allProducts);
+
+    if($debug)
+    {
+        echo '<p style="color:green;">DEBUG: Free memory. Cached products cleared!</p>';
     }
 }
 
@@ -139,7 +186,7 @@ function writeXmlToDatabase($xml, $table)
 ///////////////////////////////////////////////////
 function getProductsFromDatabase($pageNumber, $category, $magazin, $pret, $search, $table)
 {
-    global $connresult;
+    global $connToken;
     global $where;
     $orderByPrice = "";
     
@@ -149,24 +196,20 @@ function getProductsFromDatabase($pageNumber, $category, $magazin, $pret, $searc
     $where = getWhereFilter($category, $magazin, $pret, $search, $table);
     $sql = "SELECT * FROM ".$table.$where.$orderByPrice." LIMIT ".(($pageNumber-1) * 40).", 40";
     
-    $result = $connresult->query($sql);
-    
-    //get max 40 products from DB ordered by discount
-    //$where = " WHERE (Category LIKE '%".$category."%') AND (Vendor LIKE '%".$magazin."%') AND (PriceCategory LIKE '%".$pret."%') AND (ProductTitle LIKE '%".$search."%')";
-    //$sql = "SELECT * FROM ".$table.$where." ORDER BY DiscountValue DESC LIMIT ".(($pageNumber-1) * 40).", 40";
+    $result = $connToken->query($sql);
     
     return $result;
 }
 
 function getFilteredNumberOfProducts($category, $magazin, $pret, $search, $table)
 {
-    global $connresult;
+    global $connToken;
     global $numberOfRowsFiltered;
     
     $where = getWhereFilter($category, $magazin, $pret, $search, $table);
     
     $sql = "SELECT * FROM ".$table.$where;
-    $resultFiltredProducts = $connresult->query($sql);
+    $resultFiltredProducts = $connToken->query($sql);
     $numberOfRowsFiltered = $resultFiltredProducts -> num_rows;
     $numberOfRowsFilteredFormated = number_format($numberOfRowsFiltered);
     return ' ('.$numberOfRowsFilteredFormated.' oferte)';
@@ -183,10 +226,10 @@ function getTotalNumberOfPages()
 
 function getTotalNumberOfProducts($table)
 {
-    global $connresult;
+    global $connToken;
     
     $sql = "SELECT * FROM ".$table;
-    $result = $connresult->query($sql);
+    $result = $connToken->query($sql);
     $num_rows = $result -> num_rows;
     return $num_rows;
 }
