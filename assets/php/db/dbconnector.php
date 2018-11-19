@@ -42,7 +42,7 @@ function closeDBConnection()
     global $connToken;
     global $debug;
 
-    echo '<p style="color:green;">Closing connection...<br></p>';
+    echo '<p style="color:green;">DEBUG: Closing connection...<br></p>';
     
     mysqli_close($connToken);
     
@@ -52,28 +52,30 @@ function closeDBConnection()
     }
 }
 
-function clearDatabase()
+function clearDatabase($tableName) //e.g. all_discounted_products
 {
     global $connToken;
-    $sql = "TRUNCATE TABLE all_discounted_products;";
+    $sql = "TRUNCATE TABLE ".$tableName.";";
     
     if ($connToken->query($sql) === TRUE) 
     {
-        echo "<p>DB with all products cleared successfully</p>";
+        echo '<p style="color:green;">DEBUG: DB with all products cleared successfully</p>';
     } 
     else 
     {
-        echo "Error: " . $sql . "<br>" . $connToken->error;
+        echo '<p style="color:red;">DEBUG: Error: ' . $sql . '<br>' . $connToken->error.'</p>';
     }
 }
 
-function writeXmlToDatabase($xml, $table)
+//$xml - Array of data read from xml
+//$tableName - Name of the table to write to
+function writeXmlToDatabase($xml, $tableName)
 {
     global $connToken;
     
     foreach($xml->Product as $Product)
     {   
-        $sql = "INSERT INTO ".$table." (
+        $sql = "INSERT INTO ".$tableName." (
         ProductID,
         Vendor,
         ProductTitle,
@@ -123,11 +125,11 @@ function writeXmlToDatabase($xml, $table)
         
         if ($connToken->query($sql) === TRUE) 
         {
-            echo '<p>New record created successfully</p>';
+            echo '<p style="color:green;">DEBUG: New record created successfully</p>';
         } 
         else 
         {
-            echo '<p>Error: '. $connToken->error.'</p>';
+            echo '<p style="color:red;">DEBUG: Error: '. $connToken->error.'</p>';
         }
     }
 }

@@ -1,15 +1,16 @@
 <?php
-include 'assets/php/includes.php';
+//include 'assets/php/includes.php';
 include 'assets/php/xml.php';
 
 $tableAllProducts = 'all_discounted_products';
 
 function clearAndUpdateDBs()
 {
+    echo 'admin.php';
     global $tableAllProducts;
     
     connectToDatabase();
-    $xml = readXml();
+    $xml = readXml('xmldeals/AllDiscountedProducts.xml');
     if(count($xml) != 0)
     {
     clearDatabase();
@@ -88,7 +89,7 @@ function clearAndUpdateDBs()
                     * Logger: 
                         <?php 
                             ////////////////////////
-                            clearAndUpdateDBs();
+                            //clearAndUpdateDBs();
                             ////////////////////////
                         ?>
                     </span>

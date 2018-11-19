@@ -2,6 +2,7 @@
 include 'assets/php/cookies.php'; 
 include 'assets/php/urlParser.php';
 include 'assets/php/inputChecker.php';
+include 'assets/php/xml.php';
 
 include 'assets/php/db/dbconnector.php';
 
