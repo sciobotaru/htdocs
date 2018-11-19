@@ -5,13 +5,7 @@ $debug = true;
 
 $connToken; // => connection token
 $allProducts; // => all products from DB
-$where;
-$numberOfRowsFiltered;
 
-$paginationMaxNumber;
-
-//public
-//sursa: http://webdevzoom.com/connect-mysql-database-using-php/
 function connectToDatabase()
 {
     global $debug;
@@ -72,12 +66,16 @@ function clearDatabase($tableName) //e.g. all_discounted_products
 function writeXmlToDatabase($xml, $tableName)
 {
     global $connToken;
-    
+    $index = 0;
+    $recordOK = 0;
     foreach($xml->Product as $Product)
     {   
+        $index++;
         $sql = "INSERT INTO ".$tableName." (
+        ProductIndex,
         ProductID,
         Vendor,
+        Brand,
         ProductTitle,
         LinkToProduct,
         LinkToPicture,
@@ -99,15 +97,17 @@ function writeXmlToDatabase($xml, $tableName)
         DisplaySize,
         CameraResolution,
         ProcessorSpeed) VALUES 
-        ('$Product->ProductID',
+        ('$index', 
+         '$Product->ProductID',
          '$Product->Vendor', 
+         '$Product->Brand', 
          '$Product->ProductTitle',
          '$Product->LinkToProduct',
          '$Product->LinkToPicture',
          '$Product->OldPrice',
          '$Product->NewPrice',
          '$Product->NewPriceValue',
-         '$Product->PriceHistory',
+         '".str_replace("'", "\'", $Product->PriceHistory)."',
          '$Product->DiscountPercent',
          '$Product->DiscountBrut',
          '$Product->PriceEvolution',
@@ -125,23 +125,24 @@ function writeXmlToDatabase($xml, $tableName)
         
         if ($connToken->query($sql) === TRUE) 
         {
-            echo '<p style="color:green;">DEBUG: New record created successfully</p>';
+            //echo '<p style="color:green;">DEBUG: New record created successfully</p>';
+            $recordOK++;
         } 
         else 
         {
             echo '<p style="color:red;">DEBUG: Error: '. $connToken->error.'</p>';
         }
     }
+    echo '<p style="color:green;">DEBUG: '.$recordOK.'/'.$index.' recorded are OK</p>';
 }
 
-function getAllProductsFromDatabase()
+function getAllProductsFromDatabase($tableName) //e.g. all_discounted_products
 {
     global $connToken; //connection token
     global $allProducts; //products rom db
-    global $tableDiscounted;
     global $debug;
 
-    $sql = "SELECT * FROM ".$tableDiscounted;
+    $sql = "SELECT * FROM ".$tableName;
     $allProducts = mysqli_query($connToken, $sql);
 
     if($debug)
@@ -155,20 +156,9 @@ function getAllProductsFromDatabase()
             echo '<p style="color:red;">DEBUG: Query failed ('.$sql.')!</p>';
         }
     }
-
-    // $row_cnt = mysqli_num_rows($allProducts); //ok
-
-    // echo "Result set has: ".$row_cnt." rows"; //ok
-
-    /* close result set */
-    //mysqli_free_result($allProducts);
-
-    // while ($row = mysqli_fetch_array($allProducts)) //e ok!!!
-    // {
-    //     echo '<p style="color:green;">'.$row['ProductTitle'].'!</p>';
-    // }
 }
 
+//free cached database from memory 
 function freeAllProductsFromDatabase()
 {
     global $allProducts;
@@ -178,78 +168,7 @@ function freeAllProductsFromDatabase()
 
     if($debug)
     {
-        echo '<p style="color:green;">DEBUG: Free memory. Cached products cleared!</p>';
+        echo '<p style="color:green;">DEBUG: Free memory. Cleared cached products!</p>';
     }
 }
-
-//end function writeXmlToDatabase
-///////////////////////////////////////////////////
-//////  Filter products ///////////////////////////
-///////////////////////////////////////////////////
-function getProductsFromDatabase($pageNumber, $category, $magazin, $pret, $search, $table)
-{
-    global $connToken;
-    global $where;
-    $orderByPrice = "";
-    
-    if($search != "") $orderByPrice = " ORDER BY NewPriceValue ASC";
-    
-    //get max 40 products from DB
-    $where = getWhereFilter($category, $magazin, $pret, $search, $table);
-    $sql = "SELECT * FROM ".$table.$where.$orderByPrice." LIMIT ".(($pageNumber-1) * 40).", 40";
-    
-    $result = $connToken->query($sql);
-    
-    return $result;
-}
-
-function getFilteredNumberOfProducts($category, $magazin, $pret, $search, $table)
-{
-    global $connToken;
-    global $numberOfRowsFiltered;
-    
-    $where = getWhereFilter($category, $magazin, $pret, $search, $table);
-    
-    $sql = "SELECT * FROM ".$table.$where;
-    $resultFiltredProducts = $connToken->query($sql);
-    $numberOfRowsFiltered = $resultFiltredProducts -> num_rows;
-    $numberOfRowsFilteredFormated = number_format($numberOfRowsFiltered);
-    return ' ('.$numberOfRowsFilteredFormated.' oferte)';
-}
-
-function getTotalNumberOfPages()
-{
-    global $numberOfRowsFiltered;
-    
-    if($numberOfRowsFiltered == "" || $numberOfRowsFiltered == 0)
-        return (int)1;
-    return (int)ceil($numberOfRowsFiltered/40);
-}
-
-function getTotalNumberOfProducts($table)
-{
-    global $connToken;
-    
-    $sql = "SELECT * FROM ".$table;
-    $result = $connToken->query($sql);
-    $num_rows = $result -> num_rows;
-    return $num_rows;
-}
-
-//private
-function getWhereFilter($category, $magazin, $pret, $search, $table)
-{
-    $productTitleFilter = "";
-    $pieces = explode(" ", $search);
-
-    foreach($pieces as $keyword){
-        $productTitleFilter .=" AND (ProductTitle LIKE '%".$keyword."%')";
-    }
-    
-    $where = " WHERE (Category LIKE '%".$category."%') AND (Vendor LIKE '%".$magazin."%') AND (PriceCategory LIKE '%".$pret."%')".$productTitleFilter;
-    
-    return $where;
-}
-
-
 ?>

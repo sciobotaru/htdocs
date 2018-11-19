@@ -45,5 +45,6 @@ connectToDatabase();
 
 <?php
 closeDBConnection();
+freeAllProductsFromDatabase();
 ?>
 
