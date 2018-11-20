@@ -18,10 +18,10 @@ $ProcessorSpeeds = array();
 //total number of products
 function getNumberOfProducts()
 {
-    global $allProducts;
+    global $filteredProducts;
     global $numberOfProducts;
-
-    $numberOfProducts = mysqli_num_rows($allProducts);
+    
+    $numberOfProducts = count($filteredProducts);
 
     return $numberOfProducts;
 }

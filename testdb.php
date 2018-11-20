@@ -17,12 +17,14 @@ $eol = '<br>';
         connectToDatabase();
         getAllProductsFromDatabase('all_discounted_products'); //ok
 
+        filterProducts("", "", "", "", "", "Octa Core");
+        parseNumbers();
+
         echo '<p style="color:blue">Total products: '.getNumberOfProducts().'</p>';
         echo '<p style="color:blue">Products per page: '.$numberOProductsPerPage.'. Number o pages: '.getNumberOfPages().'</p>';
 
         //$ramsize, $memorysize, $displaytype, $displaysize, $cameraresolution, $processorspeed)
-        filterProducts("8192 MB", "128 GB", "", "", "", "Octa Core");
-        parseNumbers();
+        
         foreach(getVendorList() as $vendor)
         {
             echo '<p style="color:blue">Vendor: '.$vendor.'</p>';
