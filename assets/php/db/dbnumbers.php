@@ -1,5 +1,8 @@
 <?php
 include "dbconnector";
+
+$filteredProducts = array();
+
 $numberOProductsPerPage = 12;
 $numberOfProducts = 0;
 $numberOfPages = 0;
@@ -34,9 +37,42 @@ function getNumberOfPages()
     return $numberOfPages;
 }
 
+function filterProducts($ramsize, $memorysize, $displaytype, $displaysize, $cameraresolution, $processorspeed)
+{
+    //input
+    global $allProducts;
+    //output
+    global $filteredProducts;
+
+    echo 'Filter products: 
+    <br>RAM size: '.$ramsize.'
+    <br>Memory size: '.$memorysize.'
+    <br>Display type: '.$displaytype.'
+    <br>Display size: '.$displaysize.'
+    <br>Camera resolution: '.$cameraresolution.'
+    <br>Processor speed: '.$processorspeed.'<br>';
+
+    while ($row = mysqli_fetch_array($allProducts))
+    {
+        if(($ramsize === ""? true : $row['RAMSize'] === $ramsize) &&
+        ($memorysize === ""? true : $row['MemorySize'] === $memorysize) &&
+        ($displaytype === ""? true : $row['DisplayType'] === $displaytype) &&
+        ($displaysize=== ""? true : $row['DisplaySize'] === $displaysize) &&
+        ($cameraresolution === ""? true : $row['CameraResolution'] === $cameraresolution) &&
+        ($processorspeed === ""? true : $row['ProcessorSpeed'] === $processorspeed))
+        {
+            array_push($filteredProducts, $row);
+        }
+    }
+}
+
 function parseNumbers()
 {
-    global $allProducts;
+    //input
+    //global $allProducts;
+    global $filteredProducts;
+
+    //outputs
     global $brands;
     global $vendors;
     global $RAMSizes;
@@ -46,7 +82,9 @@ function parseNumbers()
     global $CameraResolutions;
     global $ProcessorSpeeds;
 
-    while ($row = mysqli_fetch_array($allProducts))
+    echo 'Parsing the numbers.<br>';
+
+    foreach ($filteredProducts as $row)
     {
         array_push($brands, $row['Brand']);
         array_push($vendors, $row['Vendor']);
