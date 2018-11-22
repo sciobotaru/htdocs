@@ -5,6 +5,7 @@ include 'assets/php/inputChecker.php';
 include 'assets/php/xml.php';
 
 include 'assets/php/db/dbconnector.php';
+include 'assets/php/db/dbnumbers.php';
 
 include 'assets/php/view/product.php';
 include 'assets/php/view/navbar.php';

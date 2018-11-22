@@ -3,6 +3,10 @@ include 'assets/php/includes.php'; //includes for normal site functioning
 //got layout from: https://www.w3schools.com/bootstrap/bootstrap_templates.asp
 checkCookies();
 connectToDatabase();
+getAllProductsFromDatabase('all_discounted_products');
+filterProducts("", "", "", "", "", "", "Octa Core");
+$products = sortProductsPriceAscending();
+
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +30,7 @@ connectToDatabase();
     <div class="col-sm-8 text-left"> 
       <?php getSortDropdown(); ?>
       <div class="card-deck" style="padding-top:20px; padding-bottom:20px;">
-        <?php getProducts4(); ?>
+        <?php getProducts4($products); ?>
       </div>
     </div>
 

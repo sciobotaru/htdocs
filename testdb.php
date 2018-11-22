@@ -15,9 +15,9 @@ $eol = '<br>';
         echo '######  DB TEST #####'.$eol;
         echo $server;
         connectToDatabase();
-        getAllProductsFromDatabase('all_discounted_products'); //ok
+        getAllProductsFromDatabase('all_discounted_products');
 
-        filterProducts("", "", "", "", "", "Octa Core");
+        filterProducts("", "", "", "", "", "", "Octa Core");
         parseNumbers();
 
         echo '<p style="color:blue">Total products: '.getNumberOfProducts().'</p>';
@@ -57,6 +57,10 @@ $eol = '<br>';
         {
             echo '<p style="color:blue">Processor speed: '.$key.'('.$value.')</p>';
         }
+
+        //sortProductsPriceDescending();
+        sortProductsPriceAscending();
+        showProducts();
 
         closeDBConnection();
         freeAllProductsFromDatabase();

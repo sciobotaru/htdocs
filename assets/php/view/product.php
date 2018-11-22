@@ -1,4 +1,5 @@
 <?php
+
 //public
 function getProducts()
 {
@@ -110,21 +111,21 @@ function getProducts()
 }
 
 
-function getProducts4()
+function getProducts4($products)
 {
-    for($i=1; $i <= 8; $i++)
+    foreach($products as $product)
     {
 ?>
 
 <div class="card custom-card">
-    <?php getFlyingDiscount(); ?>
+    <?php getFlyingDiscount($product); ?>
     <?php getShopInfo(); ?>
     <div style="width:100%;height:290px;">
-        <?php getProductSideMenu(); ?>
-        <?php getProductImage(); ?>
+        <?php getProductSideMenu($product); ?>
+        <?php getProductImage($product); ?>
     </div>
-    <?php getProductSpecifications(); ?>
-    <?php getProductInformation(); ?>
+    <?php getProductSpecifications($product); ?>
+    <?php getProductInformation($product); ?>
 </div>
 
 <?php
@@ -150,7 +151,7 @@ function getShopInfo()
 ?>
 
 <?php
-function getProductSideMenu()
+function getProductSideMenu($products)
 {
 ?>
 <div class="side-bar">
@@ -186,43 +187,43 @@ function getProductSideMenu()
 ?>
 
 <?php
-function getProductImage()
+function getProductImage($product)
 {
 ?>
 <div class="product-image">
-    <img src="assets/img/productPcgarage.jpg" height="100%">
+    <img src="<?php echo $product['LinkToPicture'] ?>" height=100%>
 </div>
 <?php
 }
 ?>
 
 <?php
-function getProductSpecifications()
+function getProductSpecifications($products)
 {
 ?>
 <div class="specifications">
     <div class="memory">
         <div class="ram">
-        <p>3 GB</p>
+        <p><?php echo $products['RAMSize']?></p>
         </div>
         <div class="internal">
-        <p>64 GB</p>
+        <p><?php echo $products['MemorySize']?></p>
         </div>
     </div>
     <div class="display">
         <div class="type">
-        <p>S AMOLED</p>
+        <p><?php echo $products['DisplayType']?></p>
         </div>
         <div class="size">
-        <p>5.2"</p>
+        <p><?php echo $products['DisplaySize']?></p>
         </div>
     </div>
     <div class="performance">
         <div class="resolution">
-        <p>5/2 MP</p>
+        <p><?php echo $products['CameraResolution']?></p>
         </div>
         <div class="frequency">
-        <p>1.2GH Octa</p>
+        <p><?php echo $products['ProcessorSpeed']?></p>
         </div>
     </div>
 </div>
@@ -231,21 +232,21 @@ function getProductSpecifications()
 ?>
 
 <?php
-function getProductInformation()
+function getProductInformation($product)
 {
 ?>
 <div style="height: 109px;">
-   <div data-toggle="tooltip" data-placement="top" data-html="true" data-animation="true" data-delay='{ "show": 300, "hide": 0 }' title="Telefon mobil Allview X4 Soul LITE, Dual SIM, Dual Camera, 16GB, 4G, 1.2 GH, Octacore" style="height: 45%;text-align:  center;">
-      <a href="#" style="padding-top:5px;font-weight:bold;font-size:14px;">Telefon mobil Allview X4 Soul LITE, Dual SIM, Dual Camera, 16GB, 4...</a>
+   <div data-toggle="tooltip" data-placement="top" data-html="true" data-animation="true" data-delay='{ "show": 300, "hide": 0 }' title="<?php echo $product['ProductTitle']?>" style="height: 45%;text-align:  center;">
+      <a href="<?php echo $product['LinkToProduct']?>" target="_blank" style="padding-top:5px;font-weight:bold;font-size:14px;"><?php echo substr($product['ProductTitle'], 0, 55)."..."?></a>
    </div>
-   <div style="text-align:center;height: 20%;font-weight:  400;"><span style="color: #091;">In Stoc</span>
+   <div style="text-align:center;height: 20%;font-weight:  400;"><span style="color: #091;"><?php echo $product['StockStatus']?></span>
    </div>
    <div style="height: 30%;">
-      <div style="width: 33%;display:block;float:left;height: 25%;font-size: 11px;padding-top: 5px;padding-left: 5px;"><s>999<sup>00</sup> Lei  </s><span style="font-weight:  bold;">(-36%)</span>
+      <div style="width: 33%;display:block;float:left;height: 25%;font-size: 11px;padding-top: 5px;padding-left: 5px;"><s><?php echo $product['NewPrice']?><sup>00</sup> Lei  </s><span style="font-weight:  bold;">(-36%)</span>
       </div>
       <div style="width: 33%;display:block;float:left;height: 25%;font-size: 12px;padding-top: 5px;padding-left: 5px;"><button type="button" class="btn btn-outline-primary btn-sm" style="font-size: 12px;width: 100%;font-weight: bold;padding: 3px;">Vezi oferta</button>
       </div>
-      <div style="width: 33%;display:block;float:left;height: 25%;font-size: 16px;padding-top: 5px;padding-left: 5px;text-align:  right;color: red;font-weight:  bold;"><span>999<sup>00</sup> Lei</span>
+      <div style="width: 33%;display:block;float:left;height: 25%;font-size: 16px;padding-top: 5px;padding-left: 5px;text-align:  right;color: red;font-weight:  bold;"><span><?php echo $product['NewPrice']?><sup>00</sup> Lei</span>
       </div>
    </div>
 </div>
@@ -254,12 +255,12 @@ function getProductInformation()
 ?>
 
 <?php
-function getFlyingDiscount()
+function getFlyingDiscount($product)
 {
 ?>
 <span style="height: 24px;width: 70px;border-radius: 7px;position: absolute;background: linear-gradient(to right, rgb(136,18,18) , rgb(237,50,38));
         margin-left: 175px;margin-top: 35px;text-align: center;color: #fff;opacity: 0.9;">
-        <strong>-200 Lei </strong>
+        <strong><?php echo $product['DiscountBrut']?> Lei </strong>
     </span>
 <?php
 }

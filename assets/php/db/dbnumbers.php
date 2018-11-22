@@ -37,7 +37,7 @@ function getNumberOfPages()
     return $numberOfPages;
 }
 
-function filterProducts($ramsize, $memorysize, $displaytype, $displaysize, $cameraresolution, $processorspeed)
+function filterProducts($vendor, $ramsize, $memorysize, $displaytype, $displaysize, $cameraresolution, $processorspeed)
 {
     //input
     global $allProducts;
@@ -45,6 +45,7 @@ function filterProducts($ramsize, $memorysize, $displaytype, $displaysize, $came
     global $filteredProducts;
 
     echo 'Filter products: 
+    <br>Vendor: '.$vendor.'
     <br>RAM size: '.$ramsize.'
     <br>Memory size: '.$memorysize.'
     <br>Display type: '.$displaytype.'
@@ -54,7 +55,8 @@ function filterProducts($ramsize, $memorysize, $displaytype, $displaysize, $came
 
     while ($row = mysqli_fetch_array($allProducts))
     {
-        if(($ramsize === ""? true : $row['RAMSize'] === $ramsize) &&
+        if(($vendor === ""? true : $row['Vendor'] === $vendor) &&
+        ($ramsize === ""? true : $row['RAMSize'] === $ramsize) &&
         ($memorysize === ""? true : $row['MemorySize'] === $memorysize) &&
         ($displaytype === ""? true : $row['DisplayType'] === $displaytype) &&
         ($displaysize=== ""? true : $row['DisplaySize'] === $displaysize) &&
@@ -66,13 +68,14 @@ function filterProducts($ramsize, $memorysize, $displaytype, $displaysize, $came
     }
 }
 
+//get numbers of products per brands, vendors, RAM size, etc
 function parseNumbers()
 {
-    //input
-    //global $allProducts;
+    ////// input ///////////////
     global $filteredProducts;
+    ////////////////////////////
 
-    //outputs
+    ///// outputs //////////////
     global $brands;
     global $vendors;
     global $RAMSizes;
@@ -81,6 +84,7 @@ function parseNumbers()
     global $DisplaySizes;
     global $CameraResolutions;
     global $ProcessorSpeeds;
+    ////////////////////////////
 
     echo 'Parsing the numbers.<br>';
 
@@ -95,7 +99,27 @@ function parseNumbers()
         array_push($CameraResolutions, $row['CameraResolution']);
         array_push($ProcessorSpeeds, $row['ProcessorSpeed']);
     } 
+}
 
+function showProducts()
+{
+    global $filteredProducts;
+
+    echo "Showing products...<br>";
+
+    foreach ($filteredProducts as $row)
+    {
+        $separator = "||";
+
+        echo $row['Brand'].$separator.
+             $row['NewPrice'].$separator.
+             $row['Vendor'].$separator.
+             $row['RAMSize'].$separator.
+             $row['MemorySize'].$separator.
+             $row['ProcessorSpeed'].$separator.
+             $row['ProductTitle'].
+             '<br>';
+    } 
 }
 
 function getNumberOfProductsPerProcessorSpeed()
@@ -203,6 +227,40 @@ function getVendorList()
     }
 
     return array_unique($vendors);
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////  COMPARE FUNCTIONS /////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function cmpPriceAscending($a, $b)
+{
+    $points = array(",", ".");
+    return str_replace($points, "", $a['NewPrice']) - str_replace($points, "", $b['NewPrice']);
+}
+ 
+function cmpPriceDescending($a, $b)
+{
+    $points = array(",", ".");
+    return str_replace($points, "", $b['NewPrice']) - str_replace($points, "", $a['NewPrice']);
+}
+
+function sortProductsPriceAscending()
+{
+    global $filteredProducts;
+
+    usort($filteredProducts, "cmpPriceAscending");
+
+    return $filteredProducts;
+}
+
+function sortProductsPriceDescending()
+{
+    global $filteredProducts;
+
+    usort($filteredProducts, "cmpPriceDescending");
+
+    return $filteredProducts;
 }
 
 ?>
